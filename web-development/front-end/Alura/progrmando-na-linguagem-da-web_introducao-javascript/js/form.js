@@ -77,7 +77,7 @@ botaoAdd.addEventListener('click',function(e){
 });
 
 function required(){
-    var inputs = document.querySelectorAll('input');
+    var inputs = document.querySelectorAll('#form-adiciona input');
     inputs.forEach(input => {
         input.addEventListener('blur',function(){
             if(this.value == "" || this.value == null){
