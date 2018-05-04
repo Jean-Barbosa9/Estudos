@@ -54,23 +54,26 @@ function exibeMensagemErro(erros){
     });
 }
 
+function adicionaPaciente(paciente){
+    var pacienteTr = criaTr(paciente),
+    tabela = qS('#tabela-pacientes');
+    tabela.appendChild(pacienteTr);
+    
+};
+
 var botaoAdd = qS('#adicionar-paciente');
 botaoAdd.addEventListener('click',function(e){
     e.preventDefault();
-    
     var form = qS('#form-adiciona'),
     paciente = obtemDadosPaciente(form),
-    pacienteTr = criaTr(paciente),
-    tabela = qS('#tabela-pacientes'),
     erros = validaPaciente(paciente);
-    
 
     if(erros.length > 0) {
         exibeMensagemErro(erros);
         return;
     }
 
-    tabela.appendChild(pacienteTr);
+    adicionaPaciente(paciente);
 
     form.reset();
     qS('#mensagens-erro').innerHTML = "";

@@ -177,3 +177,7 @@ label[for="busca"]{
 .hide{
 	display: none;
 }
+#erro-ajax{
+	color: #ff3333;
+	font-weight: 700;
+}

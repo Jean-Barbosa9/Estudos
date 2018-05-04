@@ -19,7 +19,7 @@
 			<section class="container">
 				<h2>Meus pacientes</h2>
 				<label for="busca">Filtre:</label>
-				<input type="text" name="busca" id="busca" placeholder="Digite um nome ou sobrenome"/>
+				<input type="text" name="busca" id="busca" placeholder="Digite o nome ou sobrenome"/>
 				<table>
 					<thead>
 						<tr>
@@ -71,6 +71,8 @@
 						</tr>
 					</tbody>
 				</table>
+				<span id="erro-ajax" class="hide">Ocorreu um erro ao buscar os pacientes</span>
+				<button id="busca-pacientes" class="botao bto-principal">Buscar no servidor</button>
 
 			</section>
 			<section class="container">
@@ -102,5 +104,6 @@
 		<script src="js/form.js"></script>
 		<script src="js/remover-paciente.js"></script>
 		<script src="js/filtra.js"></script>
+		<script src="js/busca-pacientes.js"></script>
 	</body>
 </html>
