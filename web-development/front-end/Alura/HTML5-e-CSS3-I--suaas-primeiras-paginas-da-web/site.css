@@ -7,12 +7,26 @@ h1,h2{
     font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
-h1{
+main h1{
     color:#fff;
     text-align: center;
     background-color: #851944;
 }
-
+blockquote{
+    background-color: #D9E5E3;
+}
+aside{
+    background-color: #3C1D3D;
+    color: #F2FFFC;    
+    font-family: "Open Sans Condensed", sans-serif;
+}
 p{
     text-align: justify;
+}
+nav a{
+    color: inherit;
+}
+footer{
+    background-color: #000;
+    color: #F2FFFC;    
 }
