@@ -5,7 +5,7 @@ body{
     line-height: 2;
 }
 
-main h1{
+.main-title{
     color:#fff;
     text-align: center;
     background-color: #851944;
@@ -14,7 +14,7 @@ main h1{
     font-size: 60px;
 }
 
-main div{
+.wrapper{
     width: 720px;
     padding: 30px 0;
     margin: 0 auto;
@@ -38,7 +38,7 @@ em{
     font-style: italic;
 }
 
-blockquote{
+.clients-comments{
     background-color: #D9E5E3;
     padding: 20px;
     margin: 20px 40px;
@@ -46,24 +46,38 @@ blockquote{
     width: 250px;
     box-sizing: border-box;
 }
-aside{
+article{
+    padding: 30px 0;
+    border-bottom: 1px solid #c2ccca;
+}
+
+.read-more{
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #c2ccca;
+}
+.navegacao-site{
     background-color: #3C1D3D;
     color: #F2FFFC;    
     font-family: "Open Sans Condensed", sans-serif;
     padding: 20px;
     text-align: center;
 }
-nav h1{
+.menu h1{
     margin-bottom: 25px;
 }
-nav a{
+.menu a{
     color: inherit;
     text-decoration: none;
 }
 .redes-sociais li{
     display: inline-block;
 }
-footer{
+.page-footer{
     background-color: #000;
     color: #F2FFFC;    
     padding: 20px;
