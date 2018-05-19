@@ -4,7 +4,11 @@ body{
     margin: 0;
     line-height: 2;
 }
-
+main{
+    float: left;
+    width: 85%;
+    padding-bottom: 80px;
+}
 .main-title{
     color:#fff;
     text-align: center;
@@ -25,6 +29,7 @@ h1{
 h1,h2{
     font-family: "Open Sans Condensed", "Arial", sans-serif;
     font-size: 30px;
+    clear: both;
 }
 
 p{
@@ -40,37 +45,31 @@ em{
     font-style: italic;
 }
 
-.clients-comments{
-    background-color: #D9E5E3;
-    padding: 20px;
-    margin: 20px 40px;
-    border: 10px solid #c2ccca;
-    width: 250px;
+.foto-perfil{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.navegacao-site, .foto-perfil{
+    float: right;
     box-sizing: border-box;
-}
-article{
-    padding: 30px 0;
-    border-bottom: 1px solid #c2ccca;
-}
-
-.read-more{
-    font-size: 20px;
-    padding: 5px;
-    margin: 5px;
-    display: block;
-    width: 100%;
-    text-align: center;
-    background-color: #c2ccca;
+    border-bottom: 10px solid #000;
+    border-left: 10px solid #000;
 }
 .navegacao-site{
+    position: relative;
+    top: 310px;
+    right: 0;
     background-color: #3C1D3D;
     color: #F2FFFC;    
     font-family: "Open Sans Condensed", sans-serif;
     padding: 20px;
     text-align: center;
+    width: 15%;
 }
 .menu h1{
     margin-bottom: 25px;
+    font-size: 25px;
 }
 .menu a{
     color: inherit;
@@ -87,16 +86,20 @@ article{
     height: 40px;
 }
 .github{
-    background-image: url('github.png');
+    background-image: url('../img/github.png');
 }
 .twitter{
-    background-image: url('twitter.png');
+    background-image: url('../img/twitter.png');
 }
 .linkedin{
-    background-image: url('linkedin.png');
+    background-image: url('../img/linkedin.png');
 }
 .page-footer{
+    position: fixed;
+    bottom: 0;
     background-color: #000;
     color: #F2FFFC;    
     padding: 20px;
+    clear: both;
+    width: 100%;
 }
