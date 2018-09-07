@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste</title>
+</head>
+<body>
+
+<h1>Lista de ingredientes</h1>
+
+<script>
+    var ingredientes = [];
+
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+    var contador = 1;
+
+    while( contador <= quantidade) {
+
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+        var ingredienteExists = false;
+        
+        if (ingredientes.length > 0) {
+            for(var i=0, len=ingredientes.length;i<len;i++){
+                if(ingrediente == ingredientes[i]){
+                    ingredienteExists = true;
+                    break;
+                }
+            }
+        }
+
+        if(ingredientes.length == 0 || (!ingredienteExists && ingredientes.length > 0 && !ingrediente.match(/\s+/g) && ingrediente != null)) {
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+        
+
+    }
+
+    for(var i=0, len=ingredientes.length;i<len;i++){
+        document.write(i+1+": "+ingredientes[i]+'<br/>');
+    }
+
+
+</script>
+</body>
+</html>
