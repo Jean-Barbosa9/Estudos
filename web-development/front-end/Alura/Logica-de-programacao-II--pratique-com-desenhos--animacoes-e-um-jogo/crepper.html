@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 1 - A cara do Crepper</title>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        var canvas = document.querySelector('canvas'),
+        brush = canvas.getContext('2d'),
+        width = 1380, //You can change this value as you want, because it's responsive
+        height = Math.round(width*0.6666666666666666),
+        headX = Math.round(width*0.5833333333333334),
+        headY = Math.round(height*0.75),
+        eyeX = headY*0.3,
+        eyeY = eyeX,
+        noseX = Math.round(headY*0.234),
+        noseY = headY/3,
+        mouthX = Math.round(headX*0.133),
+        mouthY = Math.round(headY*0.3664);
+        
+        // Setting canvas size
+        canvas.setAttribute('width',width);
+        canvas.setAttribute('height',height);
+        brush.fillStyle = '#cecece';
+        brush.fillRect(0,0,width,height);
+
+        // Drawing Crepper
+        
+        // Head
+        brush.fillStyle = '#009900'
+        brush.fillRect((width-headX)/2,(height-headY)/2,headX,headY);
+
+        // left eye
+        brush.fillStyle = '#000';
+        brush.fillRect((headX-eyeX)*0.65,(headY-eyeY)/2.1,eyeX,eyeY)
+        
+        // right eye
+        brush.fillRect((headX-eyeX)*1.265,(headY-eyeY)/2.1,eyeX,eyeY)
+
+        // nose
+        brush.fillRect(((headX-eyeX)*0.65)+eyeX,((headY-eyeY)/2.1)+eyeY,noseX,noseY)
+        
+        // mouth part 1
+        brush.fillRect((((headX-eyeX)*0.65)+eyeX)-mouthX,(((headY-eyeY)/2.1)+eyeY)+noseY/2,mouthX,mouthY);
+
+        // mouth part 2
+        brush.fillRect(((headX-eyeX)*1.265),(((headY-eyeY)/2.1)+eyeY)+noseY/2,mouthX,mouthY);
+
+    </script>
+</body>
+</html>

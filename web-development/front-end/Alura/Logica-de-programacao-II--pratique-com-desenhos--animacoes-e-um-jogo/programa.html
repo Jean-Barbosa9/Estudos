@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Aula 1 - Desenhando gráficos com canvas</title>
+</head>
+<body style='background-color: #e0e0e0'>
+    <canvas></canvas>
+    <script>
+        var width = '600', 
+        height = '400',
+        //Experimente mudar esses tamanhos para ver o que acontece
+        tela = document.querySelector('canvas'),
+        pincel = tela.getContext('2d'),
+        circle = (2*3.14),
+        //radius = ((width/height)-1)*100; //Varia conforme a proporção do canvas
+        radius = width/12; //Acompanha dinamicamente a proporção do canvas
+        
+
+        tela.setAttribute('width', width);
+        tela.setAttribute('height', height);
+        
+        // Tela de fundo cinza
+        pincel.fillStyle = '#cecece';
+        pincel.fillRect(0,0,width,height)
+        
+        // Primeira coluna de cor
+        pincel.fillStyle = '#009900';
+        pincel.fillRect(0,0,(width/3),height);
+
+        // Segunda coluna de cor
+        pincel.fillStyle = '#fff';
+        pincel.fillRect((width/3),0,(width/3),height);
+
+        // Terceira coluna de cor
+        pincel.fillStyle = '#ff0000';
+        pincel.fillRect((width-(width/3)),0,(width/3),height)
+
+        // Inicializando caminho para desenhar triângulo
+        pincel.fillStyle = '#000';
+        pincel.beginPath();
+        pincel.moveTo((width/2),(height/2));
+        pincel.lineTo((width/3),height);
+        pincel.lineTo((width-(width/3)),height);
+        pincel.lineTo((width/2),(height/2));
+        pincel.fill();
+
+        // Círculo
+        pincel.fillStyle = '#f9b200';
+        pincel.beginPath()
+        pincel.arc((width/2),(height/2),radius,0,circle);//argumentos arc: posição x, posição y, raio, ângulo inicial e ângulo final em radianos
+        pincel.fill();
+
+
+    </script>
+</body>
+</html>
