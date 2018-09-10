@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 1 - Desenhando um esquadro</title>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        
+        var canvas = document.querySelector('canvas'),
+        width = prompt('Informe o tamanho desejado para a base do esquadro: '),
+        height = width,
+        brush = canvas.getContext('2d');
+        
+        canvas.setAttribute('width',width);
+        canvas.setAttribute('height',height);
+        
+        // paintting base
+        brush.beginPath();
+        brush.fillStyle = '#000';
+        brush.moveTo(width/12,height/12);
+        brush.lineTo(width/12,(Math.round(height*0.6666666666666666)));
+        brush.lineTo((Math.round(height*0.6666666666666666)), (Math.round(height*0.6666666666666666)));
+        brush.fill()
+
+        // paintting 'the hole'
+        brush.beginPath()
+        brush.fillStyle = '#fff';
+        brush.moveTo(width/6,Math.round(height*0.2916666666666667));
+        brush.lineTo(width/6, (Math.round(height*0.5833333333333334)))
+        brush.lineTo((Math.round(width*0.4583333333333333)), (Math.round(height*0.5833333333333334)))
+        brush.fill()
+    </script>
+</body>
+</html>
