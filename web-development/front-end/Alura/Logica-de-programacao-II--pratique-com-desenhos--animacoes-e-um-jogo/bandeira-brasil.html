@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 1 - Desenhando a bandeira do Brasil</title>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        var width = prompt('Qual o tamanho em pixels deseja que seja desenhada a base da bandeira?'),
+        height = width*(2/3),
+        canvas = document.querySelector('canvas'),
+        brush = canvas.getContext('2d'),
+        pi = 3.14;
+
+        canvas.setAttribute('width',width);
+        canvas.setAttribute('height',height);
+
+        // Base da bandeira
+        brush.fillStyle = '#009900';
+        brush.fillRect(0,0,width,height);
+        
+        // Losâgulo
+        brush.beginPath();
+        brush.fillStyle = '#f7e002';
+        brush.moveTo(width*(1/10),height/2);
+        brush.lineTo(width/2,height*(1/10));
+        brush.lineTo(width*(9/10),height/2);
+        brush.lineTo(width/2,height*(9/10));
+        brush.fill()
+        
+
+        brush.beginPath();
+        brush.fillStyle = '#112299';
+        brush.arc(width/2,height/2,width/6,0,2*pi);
+        brush.fill();
+    </script>
+</body>
+</html>
