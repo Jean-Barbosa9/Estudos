@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 2 - Desenhando uma flor</title>
+</head>
+<body>
+  <canvas width="600" height="400"></canvas>
+
+  <script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+      pincel.fillStyle = cor;
+      pincel.beginPath();
+      pincel.arc(x, y, raio, 0, 2*3.14);
+      pincel.fill();
+    }
+    
+    function desenhaFlor(x,y){
+    // Flor solicitada no exercício
+    desenhaCirculo(x, y, 25, 'yellow');
+    desenhaCirculo(x-50, y, 25, 'orange');
+    desenhaCirculo(x, y-50, 25, 'red');
+    desenhaCirculo(x+50, y, 25, 'purple');
+    desenhaCirculo(x, y+50, 25, 'green');
+
+    // Flor solicitada, com mais pétalas
+    // desenhaCirculo(x, y, 23, 'yellow');
+    // desenhaCirculo(x-35, y, 20, 'orange');
+    // desenhaCirculo(x-20, y-25, 15, 'blue');
+    // desenhaCirculo(x, y-35, 20, 'red');
+    // desenhaCirculo(x+20, y-25, 15, 'white');
+    // desenhaCirculo(x+30, y, 20, 'purple');
+    // desenhaCirculo(x+20, y+25, 15, 'pink');
+    // desenhaCirculo(x, y+35, 20, 'lightgreen');
+    // desenhaCirculo(x-20, y+25, 15, 'green');
+
+    // Uma flor mais bonita
+    // desenhaCirculo(x-25, y, 25, 'orange');
+    // desenhaCirculo(x, y-25, 25, 'red');
+    // desenhaCirculo(x+25, y, 25, 'purple');
+    // desenhaCirculo(x, y+25, 25, 'green');
+    }
+
+    desenhaFlor(300,200);
+
+  </script>
+</body>
+</html>
