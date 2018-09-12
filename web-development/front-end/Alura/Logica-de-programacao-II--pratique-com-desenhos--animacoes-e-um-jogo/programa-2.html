@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 2 - Usando função para desenhar</title>
+</head>
+<body>
+  <canvas></canvas>
+  <script>
+    var canvas = document.querySelector('canvas'),
+    brush = canvas.getContext('2d'),
+    width = 600,
+    height = width;
+
+    canvas.setAttribute('width',width);
+    canvas.setAttribute('height',height);
+
+    function desenhaQuadrado(x, y, color,w,h){
+      brush.fillStyle = color;
+      brush.rect(x,y,w,h);
+      brush.fill();
+      brush.stroke();
+    }
+        
+    desenhaQuadrado(0,0,'#239f45',50,50);
+    desenhaQuadrado(100,0,'#239f45',50,50);
+    desenhaQuadrado(50,50,'#239f45',50,50);
+    desenhaQuadrado(0,100,'#239f45',50,50);
+    desenhaQuadrado(100,100,'#239f45',50,50);
+    desenhaPlanoCartesiano(0,0,600)
+
+  </script>
+</body>
+</html>
