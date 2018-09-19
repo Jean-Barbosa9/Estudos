@@ -12,7 +12,8 @@
     var canvas = document.querySelector('canvas'),
     brush = canvas.getContext('2d'),
     width = 600,
-    height = width;
+    height = width,
+    valores = [380,600,326,230,300,500,250,200]
 
     canvas.setAttribute('width',width);
     canvas.setAttribute('height',height);
@@ -31,29 +32,29 @@
         return array[0];
     }
 
-    function desenhaGraficoLinha(color){
+    function desenhaGraficoLinha(color,array){
       brush.font = '10px sans-serif';
       var valores = [380,600,326,230,300,500,250,200];
       
       brush.beginPath()
       brush.strokeStyle = color;
       var x = 30;
-      for(i=0,len=valores.length;i<len;i++){
+      for(i=0,len=array.length;i<len;i++){
           if(i>0){
-            brush.lineTo(x+=50,valores[i]);
-            brush.fillText(valores[i],x+5,valores[i])
+            brush.lineTo(x+=50,array[i]);
+            brush.fillText(array[i],x+5,array[i])
           }else{
-            brush.lineTo(x,valores[i]);
-            brush.fillText(valores[i],x+5,valores[i]);
+            brush.lineTo(x,array[i]);
+            brush.fillText(array[i],x+5,array[i]);
           }
       }
       brush.stroke();
 
-      max = sort(valores);
+      max = sort(array);
       desenhaPlanoCartesiano(30,0,max)
     }
         
-    desenhaGraficoLinha('#009900')
+    desenhaGraficoLinha('#009900',valores)
 
   </script>
 </body>

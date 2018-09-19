@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 2 - Desenhando gráficos de barras</title>
+</head>
+<body>
+  <canvas></canvas>
+  <script>
+    var canvas = document.querySelector('canvas'),
+    brush = canvas.getContext('2d'),
+    width = 600,
+    height = width*(2/3),
+    total = 0,
+    graficColors = ['blue','green','yellow','red']
+    data2015 = [100,50,25,75],
+    data2016 = [150,60,10,30];
+    
+    // setting canvas appearence
+    canvas.setAttribute('width',width);
+      if(total>=height){
+        height=total;
+        canvas.setAttribute('height',height);
+      }else{
+        canvas.setAttribute('height',height);
+      }
+    // brush.fillStyle = "#dedede"
+    brush.strokeRect(0,0,width,height)
+
+    // Fulfilling grafic data
+    function plottingGrafic(array,x,y,text){
+      // The idea is give an array with values wich will fulfill the grafic, dynamically accoding the arguments. So it's need to be iterated, but the values must be proportional to the total, wich one will be accumulated by the array (.reduce())
+      total = array.reduce(function(total,value){
+        return total + value
+      })
+
+      for(var i=0,len=array.length;i<len;i++){
+        brush.fillStyle = graficColors[i];
+        brush.fillRect(x, y,total/5,array[i]);
+        brush.font = '15px sans-serif';
+        brush.beginPath();
+        brush.fillStyle = 'black';
+        brush.fillText(array[i],x-30, y+20);
+        y += array[i];
+      }
+      brush.font = '15px sans-serif';
+      brush.beginPath();
+      brush.fillStyle = 'black';
+      brush.fillText(text,x, y+15);
+    }
+
+    plottingGrafic(data2015,width*(1/12),20,2015);
+    plottingGrafic(data2016,width*(3/12),20,2016);
+
+  </script>
+</body>
+</html>
