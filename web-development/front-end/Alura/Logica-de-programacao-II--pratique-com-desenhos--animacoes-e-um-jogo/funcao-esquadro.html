@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 2 - Esquadro em função</title>
+</head>
+<body>
+  <canvas></canvas>
+  <script>
+    var canvas = document.querySelector('canvas'),
+    brush = canvas.getContext('2d'),
+    width = 600,
+    height = width*(2/3);
+
+    // Canvas appearence
+    canvas.setAttribute('width',width);
+    canvas.setAttribute('height',height);
+
+    function drawSquare(xa,ya,xc,yc,color,mood){
+      brush.beginPath();
+      brush.moveTo(xa,ya);
+      brush.lineTo(xa,yc);
+      brush.lineTo(xc,yc);
+      if(mood=='ghost'){
+        brush.lineTo(xa,ya);
+        brush.strokeStyle = color
+        brush.stroke();
+      }else if(mood=='filled'){
+        brush.fillStyle = color;
+        brush.fill();
+      }
+    }
+    // To draw the square set the parameters of first x, first y, last x, last y (cartesians points), color and mode (filled or ghost)
+    drawSquare(50,50,400,400,'red','ghost');
+    drawSquare(100,175,275,350,'blue','ghost');
+  </script>
+</body>
+</html>
