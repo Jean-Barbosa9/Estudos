@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aula 2 - Frações</title>
-</head>
-<body>
-  <canvas></canvas>
-  <script>
-    var canvas = document.querySelector('canvas'),
-    brush = canvas.getContext('2d'),
-    width = 600,
-    height = width*(2/3);
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 2 - Frações</title>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script>
+      var canvas = document.querySelector('canvas'),
+      brush = canvas.getContext('2d'),
+      width = 600,
+      height = width*(2/3);
 
-    canvas.setAttribute('width',width);
-    canvas.setAttribute('height',height);
+      canvas.setAttribute('width',width);
+      canvas.setAttribute('height',height);
 
-    function desenhaFracao(x,y,color,size,dividend,denominator){
-      // text color
-      brush.fillStyle='black';
-      brush.font='20px Georgia';
-      brush.fillText("Qual é a fração?", 0, 30);
-      
-      // Square color
-      brush.fillStyle = color;
-      if(dividend==denominator){
-        for(var i=0;i<denominator;i++){
-          brush.fillRect(x,y,size,size)
-          brush.strokeRect(x,y,size,size)
-          x+=size;
+      function desenhaFracao(x,y,color,size,dividend,denominator){
+        // text color
+        brush.fillStyle='black';
+        brush.font='20px Georgia';
+        brush.fillText("Qual é a fração?", 0, 30);
+
+        // Square color
+        brush.fillStyle = color;
+        if(dividend==denominator){
+          for(var i=0;i<denominator;i++){
+            brush.fillRect(x,y,size,size)
+            brush.strokeRect(x,y,size,size)
+            x+=size;
+          }
+        }else if(dividend<denominator){
+          for(var i=0;i<dividend;i++){
+            brush.fillRect(x,y,size,size)
+            brush.strokeRect(x,y,size,size)
+            x+=size;
+          }
+          for(var i=0,len=denominator-dividend;i<len;i++){
+            brush.strokeRect(x,y,size,size)
+            x+=size;
+          }
+        }else{
+          brush.fillRect(x,y,Math.round(dividend/denominator),size)
         }
-      }else if(dividend<denominator){
-        for(var i=0;i<dividend;i++){
-          brush.fillRect(x,y,size,size)
-          brush.strokeRect(x,y,size,size)
-          x+=size;
-        }
-        for(var i=0,len=denominator-dividend;i<len;i++){
-          brush.strokeRect(x,y,size,size)
-          x+=size;
-        }
-      }else{
-        brush.fillRect(x,y,Math.round(dividend/denominator),size)
+
+        // answer
+        brush.fillStyle = '#000';
+        brush.fillText('A fração é '+dividend+'/'+denominator+'!',0,y*2.5)
       }
 
-      // answer
-      brush.fillStyle = '#000';
-      brush.fillText('A fração é '+dividend+'/'+denominator+'!',0,y*2.5)
-    }
-
-    desenhaFracao(0,50,'#009900',50,3,4)
-  </script>
-</body>
+      desenhaFracao(0,50,'#009900',50,3,4)
+    </script>
+  </body>
 </html>

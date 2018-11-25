@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aula 2 - Usando função para desenhar</title>
-</head>
-<body>
-  <canvas></canvas>
-  <script>
-    var canvas = document.querySelector('canvas'),
-    brush = canvas.getContext('2d'),
-    width = 600,
-    height = width,
-    valores = [380,600,326,230,300,500,250,200]
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Aula 2 - Usando função para desenhar</title>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script>
+      var canvas = document.querySelector('canvas'),
+      brush = canvas.getContext('2d'),
+      width = 600,
+      height = width,
+      valores = [380,600,326,230,300,500,250,200]
 
-    canvas.setAttribute('width',width);
-    canvas.setAttribute('height',height);
+      canvas.setAttribute('width',width);
+      canvas.setAttribute('height',height);
 
-    function desenhaPlanoCartesiano(x,y,w){
-      brush.beginPath()
-      brush.strokeStyle = '#000'
-      brush.moveTo(x,y);
-      brush.lineTo(x,w);
-      brush.lineTo(w,w);
-      brush.stroke();
-    }
-
-    function sort(array){
-      array.sort(function(a,b){return b-a});
-        return array[0];
-    }
-
-    function desenhaGraficoLinha(color,array){
-      brush.font = '10px sans-serif';
-      var valores = [380,600,326,230,300,500,250,200];
-      
-      brush.beginPath()
-      brush.strokeStyle = color;
-      var x = 30;
-      for(i=0,len=array.length;i<len;i++){
-          if(i>0){
-            brush.lineTo(x+=50,array[i]);
-            brush.fillText(array[i],x+5,array[i])
-          }else{
-            brush.lineTo(x,array[i]);
-            brush.fillText(array[i],x+5,array[i]);
-          }
+      function desenhaPlanoCartesiano(x,y,w){
+        brush.beginPath()
+        brush.strokeStyle = '#000'
+        brush.moveTo(x,y);
+        brush.lineTo(x,w);
+        brush.lineTo(w,w);
+        brush.stroke();
       }
-      brush.stroke();
 
-      max = sort(array);
-      desenhaPlanoCartesiano(30,0,max)
-    }
-        
-    desenhaGraficoLinha('#009900',valores)
+      function sort(array){
+        array.sort(function(a,b){return b-a});
+          return array[0];
+      }
 
-  </script>
-</body>
+      function desenhaGraficoLinha(color,array){
+        brush.font = '10px sans-serif';
+        var valores = [380,600,326,230,300,500,250,200];
+
+        brush.beginPath()
+        brush.strokeStyle = color;
+        var x = 30;
+        for(i=0,len=array.length;i<len;i++){
+            if(i>0){
+              brush.lineTo(x+=50,array[i]);
+              brush.fillText(array[i],x+5,array[i])
+            }else{
+              brush.lineTo(x,array[i]);
+              brush.fillText(array[i],x+5,array[i]);
+            }
+        }
+        brush.stroke();
+
+        max = sort(array);
+        desenhaPlanoCartesiano(30,0,max)
+      }
+
+      desenhaGraficoLinha('#009900',valores)
+
+    </script>
+  </body>
 </html>
