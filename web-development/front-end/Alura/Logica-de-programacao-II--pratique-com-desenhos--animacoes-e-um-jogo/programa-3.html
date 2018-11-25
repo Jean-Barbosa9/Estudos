@@ -18,14 +18,35 @@
       colors = ['blue','red','green','orange','purple','white','gray','lightblue','pink','lightgreen','yellow','lightgray'],
       selectedColorIndex = 0,
       selectedColor = colors[selectedColorIndex],
-      message = document.querySelector('#message')
+      message = document.querySelector('#message'),
+      shift = 0
 
       // functions declarations
       function plotCircle (event){
         let x = event.pageX - drawCanvas.canvas.offsetLeft,
-        y = event.pageY - drawCanvas.canvas.offsetTop
+        y = event.pageY - drawCanvas.canvas.offsetTop,
+        size = 10
 
-        drawCanvas.circle(x,y,10,selectedColor)
+
+      // feature with shift pressed + click each time
+        // if(event.shiftKey){
+        //   size += 20
+        // }
+
+      // feature by shift pressDown + click incrementally, but initial size
+        // if(event.shiftKey){
+        //   shift += 10
+        //   size += shift
+        // }
+
+      // feature by shift pressDown + click incrementally and incremented size
+        if(event.shiftKey){
+          shift += 10
+        }
+        size += shift
+
+        drawCanvas.circle(x,y,size,selectedColor)
+
       }
 
       function changeColor (event){
