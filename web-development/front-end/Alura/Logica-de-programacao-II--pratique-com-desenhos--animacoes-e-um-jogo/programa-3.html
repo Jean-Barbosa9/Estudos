@@ -19,34 +19,36 @@
       selectedColorIndex = 0,
       selectedColor = colors[selectedColorIndex],
       message = document.querySelector('#message'),
-      shift = 0
+      maxSize = 40,
+      minSize = 0,
+      incrementalStep = 10,
+      decrementalStep = 5,
+      size = 10
 
       // functions declarations
       function plotCircle (event){
         let x = event.pageX - drawCanvas.canvas.offsetLeft,
-        y = event.pageY - drawCanvas.canvas.offsetTop,
-        size = 10
+        y = event.pageY - drawCanvas.canvas.offsetTop
 
-
-      // feature with shift pressed + click each time
-        // if(event.shiftKey){
-        //   size += 20
+        // feature with shift or ctrl pressed + click each time
+        // var size = 10
+        // if(event.shiftKey && (size < maxSize)){
+        //   size += incrementalStep
+        // }
+        // else if(event.ctrlKey && (size > minSize)){
+        //   size -= decrementalStep
         // }
 
-      // feature by shift pressDown + click incrementally, but initial size
-        // if(event.shiftKey){
-        //   shift += 10
-        //   size += shift
-        // }
-
-      // feature by shift pressDown + click incrementally and incremented size
-        if(event.shiftKey){
-          shift += 10
+        // feature by shift pressDown + click incrementally and incremented size or click with ctrl
+        if(event.shiftKey && (size < maxSize)){
+          size += incrementalStep
         }
-        size += shift
+        else if(event.ctrlKey && (size > minSize)){
+          size -= decrementalStep
+        }
 
+        console.log(size);
         drawCanvas.circle(x,y,size,selectedColor)
-
       }
 
       function changeColor (event){
