@@ -79,5 +79,4 @@ class DrawCanvas {
     }
     this.brush.fill()
   }
-
 }
