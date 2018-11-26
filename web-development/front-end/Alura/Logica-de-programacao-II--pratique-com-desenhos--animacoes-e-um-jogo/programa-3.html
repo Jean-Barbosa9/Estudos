@@ -21,6 +21,7 @@
       message = document.querySelector('#message'),
       maxSize = 40,
       minSize = 0,
+      incrementMod = 'each time pressed',//'only when pressed','each time pressed'
       incrementalStep = 10,
       decrementalStep = 5,
       size = 10
@@ -30,25 +31,7 @@
         let x = event.pageX - drawCanvas.canvas.offsetLeft,
         y = event.pageY - drawCanvas.canvas.offsetTop
 
-        // feature with shift or ctrl pressed + click each time
-        // var size = 10
-        // if(event.shiftKey && (size < maxSize)){
-        //   size += incrementalStep
-        // }
-        // else if(event.ctrlKey && (size > minSize)){
-        //   size -= decrementalStep
-        // }
-
-        // feature by shift pressDown + click incrementally and incremented size or click with ctrl
-        if(event.shiftKey && (size < maxSize)){
-          size += incrementalStep
-        }
-        else if(event.ctrlKey && (size > minSize)){
-          size -= decrementalStep
-        }
-
-        console.log(size);
-        drawCanvas.circle(x,y,size,selectedColor)
+        verifyMod(x,y)
       }
 
       function changeColor (event){
@@ -77,6 +60,32 @@
       function hideMessage(){
         message.innerHTML = ''
       }
+
+      function verifyMod(x,y){
+        // feature with shift or ctrl pressed + click each time
+        if(event.shiftKey && (incrementMod == 'only when pressed')){
+          let size = 20
+          size += incrementalStep
+          return drawCanvas.circle(x,y,size,selectedColor)
+        }
+        else if(event.ctrlKey && (size > minSize)){
+          size -= decrementalStep
+          return drawCanvas.circle(x,y,size,selectedColor)
+        }
+
+        // feature by shift pressDown + click incrementally and incremented size or click with ctrl
+        if((incrementMod == 'each time pressed') && event.shiftKey && (size < maxSize)){
+          size += incrementalStep
+          return drawCanvas.circle(x,y,size,selectedColor)
+        }
+        else if(event.ctrlKey && (size > minSize)){
+          size -= decrementalStep
+          return drawCanvas.circle(x,y,size,selectedColor)
+        }else {
+          return drawCanvas.circle(x,y,size,selectedColor)
+        }
+      }
+
 
       // funciotions callbacks
       drawCanvas.canvas.onclick = plotCircle
