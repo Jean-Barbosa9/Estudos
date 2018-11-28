@@ -8,7 +8,20 @@
 let width = screen.width/2,
 height = width*(2/3),
 drawCanvas = new DrawCanvas(width,height),
-colors = ['blue','red','green','orange','purple','white','gray','lightblue','pink','lightgreen','yellow','lightgray'],
+colors = [
+  '#0000ff',
+  '#ff0000',
+  '#00ff00',
+  '#ffa500',
+  '#80017f',
+  '#ffffff',
+  '#7b7a7a',
+  '#add8e6',
+  '#ffc0cb',
+  '#90ee90',
+  '#ffff00',
+  '#d3d3d3'
+],
 selectedColorIndex = 0,
 selectedColor = colors[selectedColorIndex],
 message = document.querySelector('#message'),
@@ -18,12 +31,17 @@ incrementMod = 'each time pressed',//'only when pressed','each time pressed'
 incrementalStep = 10,
 decrementalStep = 5,
 size = 10,
-canIGo = false
-
+canIGo = false,
+colorSelector = document.querySelector('.choose-your-color'),
+colorSelectorDefault = colors[0]
 // functions declarations
 function plotCircle (event){
   let x = event.pageX - drawCanvas.canvas.offsetLeft,
   y = event.pageY - drawCanvas.canvas.offsetTop
+
+  if(colorSelector.value != colorSelectorDefault){
+    selectedColor = colorSelector.value
+  }
 
   verifyMod(x,y)
 }
@@ -40,13 +58,14 @@ function changeColor (event){
   }else{
     selectedColorIndex = 0
   }
+  colorSelector.value = selectedColor
   return false
 }
 
 function showMessage(color){
   message.innerHTML = `
-    <span class="thumb" style='background-color: ${color};'></span>
-    <span style='color: ${color}'>Selected color: ${color}</span>
+  <span style='color: ${color}'>Selected color</span>
+  <span class="thumb" style='background-color: ${color};'></span>
   `
   setTimeout(hideMessage, 5000)
 }
@@ -86,6 +105,11 @@ function manualBrush(e){
   }
 }
 
+document.querySelector('.choose-your-color').addEventListener('click',function(){
+  console.log(this.value);
+  // selectedColor = this.value
+})
+
 // funciotions callbacks
 drawCanvas.canvas.onclick = plotCircle
 drawCanvas.canvas.oncontextmenu = changeColor
@@ -96,3 +120,4 @@ drawCanvas.canvas.onmouseup = function(){
   canIGo = false
 }
 drawCanvas.canvas.onmousemove = manualBrush
+

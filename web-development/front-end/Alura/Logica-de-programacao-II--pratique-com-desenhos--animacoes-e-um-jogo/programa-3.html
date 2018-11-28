@@ -9,10 +9,21 @@
       body{
         font-family: sans-serif;
       }
+
+      #message{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        width: 150px;
+        justify-content: space-around;
+        align-items: center;
+      }
+
       .thumb{
         display: inline-block;
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
         margin-right: 5px;
         border-radius: 100%;
       }
@@ -22,11 +33,15 @@
       li{
         line-height: 20px;
       }
+      .choose-your-color{
+        margin-left: 10px;
+      }
     </style>
   </head>
   <body>
     <canvas></canvas>
-    <div id="message" style="position: absolute; top: 20px; left: 20px;"></div>
+    <div id="message"></div>
+    <p>Escolha uma cor para o pincel:<input class="choose-your-color" type="color" value="#0000ff"></p>
     <p>Lista de comandos:</p>
     <ul>
       <li>Clique com o botão esquerdo do mouse para escolher a cor;</li>
