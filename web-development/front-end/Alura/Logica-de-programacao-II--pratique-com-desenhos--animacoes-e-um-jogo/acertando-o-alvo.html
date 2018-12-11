@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 3 - Interagindo com o usuário</title>
+    <style>
+      body{
+        font-family: sans-serif;
+      }
+
+      #message{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        width: 300px;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: bold;
+        transition: all .5s ease-in;
+      }
+      .success {
+        color: #009900;
+      }
+      .fail {
+        color: #cc0000;
+      }
+      .show {
+        opacity: 1;
+      }
+
+      .hide {
+        opacity: 0;
+      }
+
+      .thumb{
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 100%;
+      }
+      ul{
+        padding-left: 30px;
+      }
+      li{
+        line-height: 20px;
+      }
+      .choose-your-color{
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <div id="message" class="hide"></div>
+    <script src="draw-canvas.js" type="text/javascript"></script>
+    <script src="right-at-center.js" type="text/javascript"></script>
+  </body>
+</html>
