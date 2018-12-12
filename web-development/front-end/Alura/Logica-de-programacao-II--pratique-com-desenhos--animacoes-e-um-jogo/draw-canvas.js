@@ -11,8 +11,7 @@ class DrawCanvas {
     this.brush.fillRect(0,0,width,height)
 
     // usefull variables
-    this.pi = 3.14
-    this.arc = 2*this.pi
+    this.arc = 2 * Math.PI
     this.topOffset = this.canvas.topOfset
     this.leftOfset = this.canvas.leftOfset
   }
@@ -78,5 +77,9 @@ class DrawCanvas {
       this.brush.lineTo(lineTo[i][0],lineTo[i][1])
     }
     this.brush.fill()
+  }
+
+  clear(initialX, initialY,finalX,finalY) {
+    this.brush.clearRect(initialX, initialY,finalX,finalY)
   }
 }
