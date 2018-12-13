@@ -71,4 +71,8 @@ class RightAtCenter {
 
 }
 
-const rightAtCenter = new RightAtCenter()
+window.onload = () => {
+  if(document.readyState == 'complete') {
+    const rightAtCenter = new RightAtCenter()
+  }
+}
