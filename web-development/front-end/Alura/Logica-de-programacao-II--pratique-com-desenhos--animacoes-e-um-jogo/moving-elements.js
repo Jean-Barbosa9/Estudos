@@ -1,43 +1,51 @@
-class MovingElements {
+class MovingElements{
   constructor () {
     this.width = document.body.offsetWidth
     this.height = this.width*0.465
-
-    this.drawCanvas = new DrawCanvas(this.width, this.height, '#dedede')
+    this.color = '#dedede'
+    this.drawCanvas = new DrawCanvas(this.width, this.height, this.color)
+    this.moveTo = 'right'
 
     this.circle = {
-      actualX: this.width,
+      actualX: 0,
       actualY: 20,
       size: 10,
       color: '#ff0000',
       draw: () => this.drawCanvas.circle(this.circle.actualX,this.circle.actualY,this.circle.size,this.circle.color)
     }
-
-    this.play()
+      // this.play()
   }
 
-  moveToLeft() {
-    let { actualX,actualY,size,color } = this.circle
-
-    this.drawCanvas.brush.clearRect(0,0,this.width,this.height)
-    this.drawCanvas.circle(actualX,actualY,size,color)
-    actualX--
+  moveToLeft(step=1) {
+    let { draw } = this.circle
+    if(this.moveTo == 'left'){
+      new DrawCanvas(this.width,this.height,this.color)
+      draw()
+      actualX-=step
+    }
   }
 
-  moveToRight() {
-    let { actualX,actualY,size,color } = this.circle
-
-    this.drawCanvas.brush.clearRect(0,0,this.width,this.height)
-    this.drawCanvas.circle(actualX,actualY,size,color)
-    actualX++
+  moveToRight(step=1) {
+    const { draw } = this.circle
+    if(this.moveTo == 'right'){
+      new DrawCanvas(this.width,this.height,this.color)
+      draw()
+      this.circle.actualX+=step
+    }
   }
 
   play() {
     let { actualX,actualY,size,color } = this.circle
 
     setInterval(() => {
-      // condição para chamar this.moveToLeft()
-      // condição para chamar this.moveToRight()
+      if(actualX == 0){
+        this.moveTo = 'right'
+      }else if(actualX == this.width){
+        this.moveTo = 'left'
+      }
+      console.log(actualX);
+      this.moveToLeft()
+      this.moveToRight()
     },5)
   }
 
