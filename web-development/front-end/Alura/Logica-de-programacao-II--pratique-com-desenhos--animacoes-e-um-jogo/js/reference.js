@@ -41,9 +41,9 @@ setInterval(() => {
 
 },10)
 
-draw(objs) {
+// draw(objs) {
   // for objs
   // if(item.props.type == circle){
     // this.brush.beginPath()...
   // }
-}
+// }

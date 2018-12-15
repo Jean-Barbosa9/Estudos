@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#message{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  width: 150px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.thumb{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 100%;
+}
+ul{
+  padding-left: 30px;
+}
+li{
+  line-height: 20px;
+}
+.choose-your-color{
+  margin-left: 10px;
+}
