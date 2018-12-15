@@ -5,104 +5,116 @@ class MovingElements{
     this.color = '#dedede'
     this.drawCanvas = new DrawCanvas(this.width, this.height, this.color)
     this.moveTo = 'right'
-
-    this.circle = {
+    this.ball = {
       actualX: this.width/2,
       actualY: this.height/2,
-      size: 10,
+      size: 20,
       color: '#ff0000',
-      draw: () => this.drawCanvas.circle(this.circle.actualX,this.circle.actualY,this.circle.size,this.circle.color)
+      draw: () => this.drawCanvas.circle(this.ball.actualX,this.ball.actualY,this.ball.size,this.ball.color)
     }
+
+    this.room = {
+      ceilling: 10,
+      right: this.width-this.ball.size,
+      flor: this.height-this.ball.size,
+      left: 10,
+    }
+
     this.interval
     this.state = 'stoped'
     this.userInteraction()
   }
 
   moveToTop(step=1) {
-    let { draw } = this.circle
+    let { draw } = this.ball
     if(this.moveTo == 'top'){
       new DrawCanvas(this.width,this.height,this.color)
       draw()
-      this.circle.actualY-=step
+      this.ball.actualY-=step
     }
+    // console.log(this.ball.actualY);
+    // console.log('chegou em y=10? ',this.ball.actualY == 10);
   }
 
   moveToRight(step=1) {
-    const { draw } = this.circle
+    const { draw } = this.ball
     if(this.moveTo == 'right'){
       new DrawCanvas(this.width,this.height,this.color)
       draw()
-      this.circle.actualX+=step
+      this.ball.actualX+=step
     }
+    // console.log('x ',this.ball.actualX);
+    // console.log('chegou em x = width? ',this.ball.actualX > this.room.right && this.ball.actualX < this.width);
   }
 
   moveToBottom(step=1) {
-    const { draw } = this.circle
+    const { draw } = this.ball
     if(this.moveTo == 'bottom'){
       new DrawCanvas(this.width,this.height,this.color)
       draw()
-      this.circle.actualY+=step
-      console.log(this.circle.actualY == this.height);
+      this.ball.actualY+=step
+      console.log('y = ' ,this.ball.actualY,', chão = ',this.room.flor);
+      console.log('chegou no chão',this.ball.actualY > this.room.flor && this.ball.actualY < this.height);
     }
   }
 
   moveToLeft(step=1) {
-    let { draw } = this.circle
+    let { draw } = this.ball
     if(this.moveTo == 'left'){
       new DrawCanvas(this.width,this.height,this.color)
       draw()
-      this.circle.actualX-=step
+      this.ball.actualX-=step
     }
   }
 
-  bounceOnWalls() {
-    if(this.circle.actualX == 0){
+  bounceOnRoom() {
+    if(this.ball.actualX < this.room.left && this.ball.actualX > 0){
       this.moveTo = 'right'
     }
-    else if(this.circle.actualX == this.width-10){
+    else if(this.ball.actualX > this.room.right && this.ball.actualX < this.width){
       this.moveTo = 'left'
     }
-    else if(this.circle.actualY == this.height-10){
+    else if(this.ball.actualY > this.room.flor && this.ball.actualY < this.height){
       this.moveTo = 'top'
     }
-    else if(this.circle.actualY == 10){
+    else if(this.ball.actualY < this.room.ceilling && this.ball.actualY > 0){
       this.moveTo = 'bottom'
     }
   }
 
   infinityMovement() {
-    if(this.circle.actualX == this.width-10) {
-      this.circle.actualX = 1
+    if(this.ball.actualX < this.room.left && this.ball.actualX > 0) {
+      this.ball.actualX = this.room.right
     }
-    else if(this.circle.actualX == 0){
-      this.circle.actualX = this.width-10
+    else if(this.ball.actualX > this.room.right && this.ball.actualX < this.width){
+      this.ball.actualX = this.room.left
     }
-    else if(this.circle.actualY == this.height-10) {
-      this.circle.actualY = 1
+    else if(this.ball.actualY < this.room.ceilling && this.ball.actualY > 0) {
+      this.ball.actualY = this.room.flor
     }
-    else if(this.circle.actualY == 0) {
-      this.circle.actualY = this.height-10
+    else if(this.ball.actualY > this.room.flor && this.ball.actualY < this.height) {
+      this.ball.actualY = this.room.ceilling
     }
     console.log('this.width-10');
 
   }
 
-  play() {
+  play(opt, move) {
+    console.log(moveTo);
+    this.moveTo = move
     this.interval = setInterval(() => {
       this.state = 'playing'
-      // this.bounceOnWalls()
-      this.infinityMovement()
+      if(opt == 'bounce') {
+        this.bounceOnRoom()
+      }
+      else {
+        this.infinityMovement()
+      }
       this.moveToTop()
       this.moveToRight()
       this.moveToBottom()
       this.moveToLeft()
     },5)
-    // this.interval = setInterval(() => {
-    //   this.moveToTop()
-    //   this.moveToRight()
-    //   this.moveToBottom()
-    //   this.moveToLeft()
-    // },5)
   }
 
   stop() {
@@ -111,22 +123,27 @@ class MovingElements{
   }
 
   controls(event) {
-    if(event == 32 && this.state == 'playing'){
+    if(event.keyCode == 32 && this.state == 'playing'){
       this.stop()
     }
-    else if(event == 32 && this.state == 'stoped'){
-      this.play()
+    else if(event.keyCode == 32 && this.state == 'stoped'){
+      console.log(this.moveTo);
+      if(event.shiftKey) {
+        this.play('infinity',this.moveTo)
+      }else {
+        this.play('bounce',this.moveTo)
+      }
     }
-    else if(event == 119) {
+    else if(event.keyCode == 119) {
       this.moveTo = 'top'
     }
-    else if(event == 100) {
+    else if(event.keyCode == 100) {
       this.moveTo = 'right'
     }
-    else if(event == 115) {
+    else if(event.keyCode == 115) {
       this.moveTo = 'bottom'
     }
-    else if(event == 97) {
+    else if(event.keyCode == 97) {
       this.moveTo = 'left'
     }
     console.log('state: ',this.state,', ','move to: ',this.moveTo);
@@ -134,7 +151,8 @@ class MovingElements{
 
   userInteraction() {
     document.addEventListener('keypress',(event) => {
-      this.controls(event.keyCode);
+      console.log(event);
+      this.controls(event);
     })
   }
 
