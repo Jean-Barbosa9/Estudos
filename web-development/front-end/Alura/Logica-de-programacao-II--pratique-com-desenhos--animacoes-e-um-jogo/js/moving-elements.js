@@ -4,7 +4,7 @@ class MovingElements{
     this.height = this.width*0.465
     this.color = '#dedede'
     this.drawCanvas = new DrawCanvas(this.width, this.height, this.color)
-    this.moveTo = 'bottom'
+    this.moveTo = 'right'
 
     this.circle = {
       actualX: this.width/2,
@@ -77,13 +77,13 @@ class MovingElements{
     else if(this.circle.actualX == 0){
       this.circle.actualX = this.width-10
     }
-    else if(this.circle.actualY == this.height-100) {
+    else if(this.circle.actualY == this.height-10) {
       this.circle.actualY = 1
     }
     else if(this.circle.actualY == 0) {
-      this.circle.actualY = this.height-100
+      this.circle.actualY = this.height-10
     }
-    console.log(this.width-10);
+    console.log('this.width-10');
 
   }
 
