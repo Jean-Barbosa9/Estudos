@@ -27,6 +27,8 @@ class HandlingElements{
     this.interval
     this.state = 'stoped'
     this.userInteraction()
+
+    this.pulsing = 'initialize'
   }
 
   moveToTop(step=1) {
@@ -67,7 +69,7 @@ class HandlingElements{
 
   grow(limited = false) {
     if(limited && this.ball.ray == this.ball.maxRay) {
-      this.ball.behavior = 'stop growing'
+      this.pulsing = 'stop growing'
       return false
     }
     else {
@@ -78,7 +80,7 @@ class HandlingElements{
   shrink(limited = false) {
 
     if(limited && this.ball.ray == this.ball.initialRay) {
-      this.ball.behavior = 'stop shrinking'
+      this.pulsing = 'stop shrinking'
       return false
     }
     else {
@@ -88,32 +90,13 @@ class HandlingElements{
 
   pulse() {
 
-    if(this.ball.bahavior == 'stop shrinking' || this.ball.bahavior == 'pulse') {
+    let pulsing = this.pulsing
+
+    if(pulsing == 'stop shrinking' || pulsing == 'initialize') {
       this.grow(true)
+    } else if(pulsing == 'stop growing') {
+      this.shrink(true)
     }
-
-    if(this.ball.behavior == 'stop growing') {
-      this.shrink()
-    }
-
-    console.log('ball ray: ',this.ball.ray);
-    console.log('ball bahavior: ', this.ball.bahavior);
-
-
-    // if(this.ball.ray == this.ball.maxRay) {
-    //   this.ball.ray--
-    // }
-    // else {
-    //   this.ball.ray++
-    // }
-
-    // console.log(this.ball.behavior);
-    // if(this.ball.behavior == 'stop shrinking' || this.ball.behavior == 'pulse') {
-    //   this.grow(true)
-    // }
-    // else if(this.ball.behavior == 'stop growing' || this.ball.behavior == 'pulse') {
-    //   this.shrink(true)
-    // }
   }
 
   bounceOnRoom() {
@@ -178,8 +161,6 @@ class HandlingElements{
         this.pulse()
       }
 
-      // console.log(this.ball.behavior);
-
     },5)
   }
 
@@ -196,7 +177,6 @@ class HandlingElements{
       this.stop()
     }
     else if(key == 32 && this.state == 'stoped'){
-      console.log(this.moveTo);
       if(shift) {
         this.play('infinity',this.moveTo)
       }else {
@@ -224,7 +204,7 @@ class HandlingElements{
     else if(key == 66) {
       this.ball.behavior = 'pulse'
     }
-    console.log('state: ',this.state,', ','move to: ',this.moveTo);
+    // console.log('state: ',this.state,', ','move to: ',this.moveTo);
   }
 
   mouseControls(event) {
@@ -240,7 +220,7 @@ class HandlingElements{
 
   userInteraction() {
     document.addEventListener('keypress',(event) => {
-      console.log(event.keyCode);
+      // console.log(event.keyCode);
       this.keyboardControls(event);
     })
 
