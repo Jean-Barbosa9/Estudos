@@ -88,14 +88,16 @@ class HandlingElements{
     }
   }
 
-  pulse() {
-
+  pulse(justPulse) {
     let pulsing = this.pulsing
 
     if(pulsing == 'stop shrinking' || pulsing == 'initialize') {
       this.grow(true)
     } else if(pulsing == 'stop growing') {
       this.shrink(true)
+    }
+    else if (justPulse) {
+      this.ball.draw()//preciso pensar em como deixar o elemento parado, mas rodando o play com todas os demais métodos disponíveis
     }
   }
 
@@ -129,19 +131,32 @@ class HandlingElements{
     }
   }
 
-  play(opt, move) {
-    console.log(this.ball.behavior);
-    this.moveTo = move
+  play(settings) {
+    // settings mock
+    // {
+    //   movementMode: 'bounce' || 'infinity',
+    //   moveTo: 'top' || 'right' || 'bottom' || 'left',
+    //   intervalTime: 5 || any number in milliseconds,
+    //   justPulse: true,
+    // }
+
+
+    this.moveTo = settings.moveTo
     this.interval = setInterval(() => {
+
       this.state = 'playing'
-      if(opt == 'bounce') {
+
+      if(settings.movementMode == 'bounce') {
         this.bounceOnRoom()
       }
-      else {
+      else if(settings.movementMode == 'infinity'){
         this.infinityMovement()
       }
 
       switch(this.moveTo) {
+        case 'noWhere':
+          this.ball.actualX = this.width/2
+          this.ball.actualY = this.height/2
         case 'top':
         this.moveToTop()
         case 'right':
@@ -157,11 +172,11 @@ class HandlingElements{
       }
       else if(this.ball.behavior == 'shrink') {
         this.shrink(true)
-      } else if (this.ball.behavior == 'pulse') {
-        this.pulse()
+      } else if (this.ball.behavior == 'pulse' || settings.justPulse) {
+        this.pulse(settings.justPulse)
       }
 
-    },5)
+    },settings.intervalTime || 5)
   }
 
   stop() {
@@ -171,16 +186,30 @@ class HandlingElements{
 
   keyboardControls(event) {
     let key = event.keyCode,
-    shift = event.shiftKey
+    shift = event.shiftKey,
+    ctrl = event.ctrlKey
+
+    console.log(event);
 
     if(key == 32 && this.state == 'playing'){
       this.stop()
     }
     else if(key == 32 && this.state == 'stoped'){
       if(shift) {
-        this.play('infinity',this.moveTo)
-      }else {
-        this.play('bounce',this.moveTo)
+        this.play({
+          movementMode: 'infinity',
+          moveTo: this.moveTo,
+          intervalTime: 15,
+          justPulse: false
+        })
+      }
+      else {
+        this.play({
+          movementMode: 'bounce',
+          moveTo: this.moveTo,
+          intervalTime: 5,
+          justPulse: false
+        })
       }
     }
     else if(key == 119) {
@@ -226,7 +255,13 @@ class HandlingElements{
 
     this.drawCanvas.canvas.addEventListener('click',(event) => {
       this.mouseControls(event)
-      this.ball.behavior = 'pulse'
+
+      this.play({
+        movementMode: 'none',
+        moveTo: 'noWhere',
+        intervalTime: 10,
+        justPulse: true
+      })
     })
   }
 
