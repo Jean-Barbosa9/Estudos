@@ -10,7 +10,7 @@ class HandlingElements{
       actualY: this.height/2,
       ray: 20,
       maxRay: 50,
-      color: '#ff0000',
+      color: '#0000ff',
       behavior: 'static',
       draw: () => this.drawCanvas.circle(this.ball.actualX,this.ball.actualY,this.ball.ray,this.ball.color)
     }
@@ -67,24 +67,26 @@ class HandlingElements{
     }
   }
 
-  grow(limited = false) {
+  grow(limited = false ,step = 1) {
     if(limited && this.ball.ray == this.ball.maxRay) {
       this.pulsing = 'stop growing'
       return false
     }
     else {
-      this.ball.ray++
+      this.ball.color = 'green'
+      this.ball.ray+=step
     }
   }
 
-  shrink(limited = false) {
+  shrink(limited = false,step = 1) {
 
     if(limited && this.ball.ray == this.ball.initialRay) {
       this.pulsing = 'stop shrinking'
       return false
     }
     else {
-      this.ball.ray--
+      this.ball.color = 'red'
+      this.ball.ray-=step
     }
   }
 
@@ -191,7 +193,7 @@ class HandlingElements{
     shift = event.shiftKey,
     ctrl = event.ctrlKey
 
-    console.log(event);
+    // console.log(event);
 
     if(key == 32 && this.state == 'playing'){
       this.stop()
@@ -245,14 +247,14 @@ class HandlingElements{
     yOk = pageY > this.ball.actualY - this.ball.ray && pageY < this.ball.actualY + this.ball.ray
 
     if(this.state == 'playing' && xOk && yOk){
-      console.log('you did it')
+      console.log('you scored 100 points')
     }
 
     if(this.state == 'stoped') {
       this.play({
         movementMode: 'none',
         moveTo: 'noWhere',
-        intervalTime: 10,
+        intervalTime: 25,
         justPulse: true
       })
     } else if(this.state == 'playing') {
