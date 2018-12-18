@@ -96,8 +96,10 @@ class HandlingElements{
     } else if(pulsing == 'stop growing') {
       this.shrink(true)
     }
-    else if (justPulse) {
-      this.ball.draw()//preciso pensar em como deixar o elemento parado, mas rodando o play com todas os demais métodos disponíveis
+
+    if (justPulse) {
+      new DrawCanvas(this.width,this.height,this.color)
+      this.ball.draw()
     }
   }
 
@@ -245,6 +247,17 @@ class HandlingElements{
     if(this.state == 'playing' && xOk && yOk){
       console.log('you did it')
     }
+
+    if(this.state == 'stoped') {
+      this.play({
+        movementMode: 'none',
+        moveTo: 'noWhere',
+        intervalTime: 10,
+        justPulse: true
+      })
+    } else if(this.state == 'playing') {
+      this.stop()
+    }
   }
 
   userInteraction() {
@@ -256,12 +269,7 @@ class HandlingElements{
     this.drawCanvas.canvas.addEventListener('click',(event) => {
       this.mouseControls(event)
 
-      this.play({
-        movementMode: 'none',
-        moveTo: 'noWhere',
-        intervalTime: 10,
-        justPulse: true
-      })
+
     })
   }
 
