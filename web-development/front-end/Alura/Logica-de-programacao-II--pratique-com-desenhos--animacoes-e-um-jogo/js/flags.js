@@ -6,38 +6,37 @@ class Flags {
       flags:[
         {
           country: 'Brazil',
-          colors: ['#009b3a','#fedf00','#002776'],
           forms: [
             {
               rect: {
-                width: this.settings.maxWidth,
-                height: this.settings.maxHeight,
-                color: this.settings.flags[0].colors[0]
+                width: this.maxWidth,
+                height: this.maxHeight,
+                color: '#009b3a'
               },
             },
             {
               polygon: {
                 startX: 10,
-                startY: this.settings.maxHeight/2,
+                startY: this.maxHeight/2,
                 movingPoints: [
                   {
-                    x: this.settings.maxWidth/2,
+                    x: this.maxWidth/2,
                     y: 10
                   },
                   {
-                    x: this.settings.maxWidth - 10,
-                    y: this.settings.maxHeight/2
+                    x: this.maxWidth - 10,
+                    y: this.maxHeight/2
                   },
                   {
-                    x: this.settings.maxWidth/2,
+                    x: this.maxWidth/2,
                     y: this.maxHeight - 10,
                   },
                   {
-                    x: this.settings.flags[0].forms[1].polygon.startX,
-                    y: this.settings.flags[0].forms[1].polygon.startY,
+                    x: 10,
+                    y: this.maxHeight/2,
                   }
                 ],
-                color: this.settings.flags[0].colors[1]
+                color: '#fedf00'
               }
             },
             {
@@ -45,7 +44,7 @@ class Flags {
                 x: this.maxWidth/2,
                 y: this.maxHeight/2,
                 ray: this.maxWidth/6,
-                color: this.settings.flags[0].colors[2]
+                color: '#002776'
               }
             }
           ]
