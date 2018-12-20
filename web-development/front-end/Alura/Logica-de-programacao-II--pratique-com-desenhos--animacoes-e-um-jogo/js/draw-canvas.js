@@ -1,4 +1,6 @@
 class DrawCanvas {
+  // lembrar de mudar aqui e em todos os lugares onde o canvas é desenhado por essa classe, para que a cor seja o primeiro atributo, caso eu queira alterar somente a cor e deixar tamanho padrão, só preciso setar a cor
+
   constructor(width = '600',height = '400',color = '#000'){
     // setting up canvas and it's brush
     this.canvas = document.querySelector('canvas')
