@@ -7,6 +7,10 @@ class DrawingFlags {
     console.log(this.flags.settings.flagMaxWidth);
 
   }
+
+  drawBrazilFlag() {
+
+  }
 }
 
 const drawingFlags = new DrawingFlags()
