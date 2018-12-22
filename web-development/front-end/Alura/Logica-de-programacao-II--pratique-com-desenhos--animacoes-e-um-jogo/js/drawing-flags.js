@@ -45,6 +45,10 @@ class DrawingFlags {
 
     this.canvas.rect()
   }
+
+  drawBrazilFlag() {
+
+  }
 }
 
 const drawingFlags = new DrawingFlags()
