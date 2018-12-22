@@ -8,14 +8,18 @@ class Flags {
           country: 'Brazil',
           forms: [
             {
-              rect: {
+              type: 'rect',
+              coords: {
+                initialX: 0,
+                initialY: 0,
                 width: this.maxWidth,
                 height: this.maxHeight,
                 color: '#009b3a'
               },
             },
             {
-              polygon: {
+              type: 'polygon',
+              coords: {
                 startX: 10,
                 startY: this.maxHeight/2,
                 movingPoints: [
@@ -40,7 +44,8 @@ class Flags {
               }
             },
             {
-              circle: {
+              type: 'circle',
+              coords: {
                 x: this.maxWidth/2,
                 y: this.maxHeight/2,
                 ray: this.maxWidth/6,
@@ -51,8 +56,73 @@ class Flags {
         },
         {
           country: 'Germany',
-          colors: ['#000000','#dd0000','#ffce00'],
-          forms: ['rect','rect','rect'],
+          forms: [
+            {
+              type: 'rect',
+              coords: {
+                initialX: 0,
+                initialY: 0,
+                width: this.maxWidth,
+                height: this.maxHeight/3,
+                color: '#000000'
+              }
+            },
+            {
+              type: 'rect',
+              coords: {
+                initialX: 0,
+                initialY: this.maxHeight/3,
+                width: this.maxWidth,
+                height: this.maxHeight/3,
+                color: '#dd0000'
+              }
+            },
+            {
+              type: 'rect',
+              coords: {
+                initialX: 0,
+                initialY: this.maxHeight*0.6667,
+                width: this.maxWidth,
+                height: this.maxHeight/3,
+                color: '#fce000'
+              },
+            }
+          ],
+        },
+        {
+          country: 'Italy',
+          form: [
+            {
+              type: 'rect',
+              coords: {
+                initialX: 0,
+                initialY: 0,
+                width: this.maxWidth/3,
+                height: this.maxHeight,
+                color: '#009144'
+              },
+            },
+            {
+              type: 'rect',
+              coords: {
+                initialX: this.maxWidth/3,
+                initialY: 0,
+                width: this.maxWidth/3,
+                height: this.maxHeight,
+                color: '#ffffff'
+              }
+            },
+            {
+              type: 'rect',
+              coords: {
+                initialX: this.maxWidth*0.6667,
+                initialY: 0,
+                width: this.maxWidth/3,
+                height: this.maxHeight,
+                color: '#cd2b38'
+              },
+            }
+          ]
         }
       ]
     }

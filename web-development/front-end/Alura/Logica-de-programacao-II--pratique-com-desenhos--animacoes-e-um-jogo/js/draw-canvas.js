@@ -18,9 +18,9 @@ class DrawCanvas {
     this.leftOfset = this.canvas.leftOfset
   }
 
-  rect(width,height,start,end,color){
+  rect(initialX,initialY,width,height,color){
     this.brush.fillStyle = color
-    this.brush.fillRect(width,height,start,end)
+    this.brush.fillRect(initialX,initialY,width,height,color)
   }
 
   circle(x,y,size,color){
