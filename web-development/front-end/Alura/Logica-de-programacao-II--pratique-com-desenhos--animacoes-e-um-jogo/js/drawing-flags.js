@@ -29,6 +29,7 @@ class DrawingFlags {
 
     for(var i=0, len=settingsOf.forms.length;i<len;i++) {
       types.push(settingsOf.forms[i].type)
+      // aqui precisará pegar as coords, conforme type
       this.mountForm(types[0])
     }
 
