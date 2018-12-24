@@ -20,25 +20,12 @@ class Flags {
             {
               type: 'polygon',
               coords: {
-                startX: 10,
-                startY: this.maxHeight/2,
-                movingPoints: [
-                  {
-                    x: this.maxWidth/2,
-                    y: 10
-                  },
-                  {
-                    x: this.maxWidth - 10,
-                    y: this.maxHeight/2
-                  },
-                  {
-                    x: this.maxWidth/2,
-                    y: this.maxHeight - 10,
-                  },
-                  {
-                    x: 10,
-                    y: this.maxHeight/2,
-                  }
+                moveTo: [10,this.maxHeight/2],
+                lineTo: [
+                  [this.maxWidth/2,10],
+                  [this.maxWidth - 10,this.maxHeight/2],
+                  [this.maxWidth/2,this.maxHeight - 10],
+                  [10,this.maxHeight/2]
                 ],
                 color: '#fedf00'
               }
