@@ -61,7 +61,6 @@ class DrawingFlags {
 
   drawFlag() {
     this.interval = setInterval(() => {
-      console.log(this.flagIndex);
 
       if(this.formIndex < this.formsLen) {
         let props = this.settingsOf.forms[this.formIndex].coords
@@ -69,15 +68,24 @@ class DrawingFlags {
         this.mountForm(this.types[this.formIndex],props)
         this.formIndex++
       }
-      else if(this.flagIndex < this.flagsLen) {
+      else if(this.flagIndex < (this.flagsLen - 1)) {
         this.canvas.clear(0,0,this.width,this.height)
         this.flagIndex++
         this.formIndex = 0
         this.drawSettings()
       }
       else {
-        this.stop()
-        this.canvas.text('Fim da apresentação',20,20)
+        this.canvas.clear(0,0,this.width,this.height)
+
+        //para ter apresentação só de ida
+        // this.stop()
+        // this.canvas.text('Fim da apresentação',this.width/2,this.height/2)
+
+        // para ter apresentação ciclica infinita
+        this.formIndex = 0
+        this.flagIndex = 0
+        this.drawSettings()
+
       }
     },1000)
   }

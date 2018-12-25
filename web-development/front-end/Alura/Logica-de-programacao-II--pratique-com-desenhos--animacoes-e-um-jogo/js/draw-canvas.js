@@ -87,7 +87,7 @@ class DrawCanvas {
 
   text(text,x,y,color='#000000',maxLength,) {
     this.brush.fillStyle = color
-    this.font = '10px sans-serif'
+    this.brush.font = '20px sans-serif'
     this.brush.fillText(text,x,y,maxLength)
   }
 }
