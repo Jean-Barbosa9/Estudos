@@ -7,14 +7,14 @@ class DrawingFlags {
     this.interval
     this.flagsList = this.flagsList()
     this.flagsLen = this.flagsList.length
-    this.actualFlag = this.flagsList[0]
+    this.flagIndex = 0
+    this.actualFlag = this.flagsList[this.flagIndex]
     this.nextFlag = this.flagsList[this.flagsList.indexOf(this.actualFlag)+1]
-
     this.formIndex = 0
-    this.listIndex = 0
-
-
     this.drawSettings()
+
+    // esse no caso será chamado posteriormente com um clique em um botão de play
+    this.drawFlag()
   }
 
   flagsList() {
@@ -29,44 +29,15 @@ class DrawingFlags {
 
   drawSettings() {
     const { maxWidth, maxHeight, settings } = this.flags
-    const country = settings.flags.country
-    let settingsOf = settings.flags[this.flagsList.indexOf(this.actualFlag)],
-    types = [],
-    formsLen = settingsOf.forms.length
+    const country = settings.flags.country //será usado para construir o select personalizado com os países disponíveis
 
-    // for(var i=0, len=settingsOf.forms.length;i<len;i++) {
-    //   types.push(settingsOf.forms[i].type)
-    //   let props = settingsOf.forms[i].coords
-    //   this.mountForm(types[i],props)
-    // }
+    this.settingsOf = settings.flags[this.flagIndex]
+    this.types = []
+    this.formsLen = this.settingsOf.forms.length
 
-
-    // tenho que pensar em uma forma de incrementar o item que está sendo lido pela lista na hora de desenhar a bandeira
-
-
-    this.interval = setInterval(() => {
-
-
-      if(this.formIndex<formsLen) {
-        console.log(this.actualFlag);
-        console.log(this.listIndex);
-        types.push(settingsOf.forms[this.formIndex].type)
-        let props = settingsOf.forms[this.formIndex].coords
-        this.mountForm(types[this.formIndex],props)
-        this.formIndex++
-        console.log('running')
-      }
-      else if(this.listIndex < this.flagsLen) {
-        this.actualFlag = this.flagsList[this.flagsList.indexOf(this.actualFlag)+1]
-        this.listIndex++
-        this.formIndex = 0
-        this.drawSettings()
-      }
-      else {
-        this.stop()
-        this.canvas.clear(0,0,this.width,this.height)
-      }
-    },1000)
+    for(var i=0, len=this.settingsOf.forms.length;i<len;i++) {
+      this.types.push(this.settingsOf.forms[i].type)
+    }
 
   }
 
@@ -75,6 +46,8 @@ class DrawingFlags {
   }
 
   mountForm(type, props) {
+    // falta o setInterval que vai desenhar cada forma aos poucos, lembrando que será preciso chamar o clearInterval ao final de cada desenho, para que o setIterval não se acumulem
+
     if(type == 'circle') {
       this.canvas.circle(props.x,props.y,props.ray,props.color)
     }
@@ -87,13 +60,28 @@ class DrawingFlags {
   }
 
   drawFlag() {
-    // aqui talvez poderia vir o setInterval que desenhará a bandeira aos poucos
+    this.interval = setInterval(() => {
+      console.log(this.flagIndex);
 
+      if(this.formIndex < this.formsLen) {
+        let props = this.settingsOf.forms[this.formIndex].coords
+        console.log(props);
+        this.mountForm(this.types[this.formIndex],props)
+        this.formIndex++
+      }
+      else if(this.flagIndex < this.flagsLen) {
+        this.canvas.clear(0,0,this.width,this.height)
+        this.flagIndex++
+        this.formIndex = 0
+        this.drawSettings()
+      }
+      else {
+        this.stop()
+        this.canvas.text('Fim da apresentação',20,20)
+      }
+    },1000)
   }
 
-  drawBrazilFlag() {
-
-  }
 }
 
 const drawingFlags = new DrawingFlags()
