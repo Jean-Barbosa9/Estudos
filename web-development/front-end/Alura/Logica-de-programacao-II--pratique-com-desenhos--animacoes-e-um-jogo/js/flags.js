@@ -78,7 +78,7 @@ class Flags {
         },
         {
           country: 'Italy',
-          form: [
+          forms: [
             {
               type: 'rect',
               coords: {
