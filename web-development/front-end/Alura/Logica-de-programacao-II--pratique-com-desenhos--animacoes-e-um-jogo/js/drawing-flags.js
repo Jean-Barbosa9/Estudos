@@ -14,7 +14,7 @@ class DrawingFlags {
     this.drawSettings()
 
     // esse no caso será chamado posteriormente com um clique em um botão de play
-    this.drawFlag()
+    this.drawFlag('cicle')
   }
 
   flagsList() {
@@ -59,12 +59,11 @@ class DrawingFlags {
     }
   }
 
-  drawFlag() {
+  drawFlag(mode='sprint') {
     this.interval = setInterval(() => {
 
       if(this.formIndex < this.formsLen) {
         let props = this.settingsOf.forms[this.formIndex].coords
-        console.log(props);
         this.mountForm(this.types[this.formIndex],props)
         this.formIndex++
       }
@@ -76,18 +75,19 @@ class DrawingFlags {
       }
       else {
         this.canvas.clear(0,0,this.width,this.height)
-
-        //para ter apresentação só de ida
-        // this.stop()
-        // this.canvas.text('Fim da apresentação',this.width/2,this.height/2)
-
+        //apresentação só de ida
+        if(mode =='sprint') {
+          this.stop()
+          this.canvas.text('Fim da apresentação',this.width/2,this.height/2)
+        }
         // para ter apresentação ciclica infinita
-        this.formIndex = 0
-        this.flagIndex = 0
-        this.drawSettings()
-
+        else if (mode == 'cicle') {
+          this.formIndex = 0
+          this.flagIndex = 0
+          this.drawSettings()
+        }
       }
-    },1000)
+    },500)
   }
 
 }
