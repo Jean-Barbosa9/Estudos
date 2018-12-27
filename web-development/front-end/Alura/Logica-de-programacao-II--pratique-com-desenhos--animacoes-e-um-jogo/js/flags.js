@@ -1,7 +1,7 @@
 class Flags {
-  constructor() {
-    this.maxWidth = 600
-    this.maxHeight = 400
+  constructor(maxWidth = 600, maxHeight = 400) {
+    this.maxWidth = maxWidth
+    this.maxHeight = maxHeight
     this.settings = {
       flags:[
         {
