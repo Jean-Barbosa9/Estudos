@@ -8,36 +8,30 @@
   </head>
   <body>
     <canvas></canvas>
-    <script type='text/javascript' scr='js/canvas.js'></script>
-    <script type='text/javascript' scr='js/GeometricForms.js'></script>
+    <script type="text/javascript" src="js/draw-canvas.js"></script>
+    <script type="text/javascript" src="js/flags.js"></script>
     <script>
       var width = prompt('Qual o tamanho em pixels deseja que seja desenhada a base da bandeira?'),
       height = width*(2/3),
-      canvas = document.querySelector('canvas'),
-      brush = canvas.getContext('2d'),
-      pi = 3.14;
+      canvas = new DrawCanvas(width,height,'#dedede'),
+      flag = new Flags(width,height)
+      brazilFlagForms = flag.settings.flags[0].forms
 
-      canvas.setAttribute('width',width);
-      canvas.setAttribute('height',height);
+      for (var i=0, len=brazilFlagForms.length;i<len;i++) {
+        var coords = brazilFlagForms[i].coords
+        console.log(coords);
+        if(brazilFlagForms[i].type == 'rect') {
+          canvas.rect(coords.initialX,coords.initialY,coords.width,coords.height,coords.color)
+        }
+        else if(brazilFlagForms[i].type == 'polygon') {
+          canvas.polygon(coords)
+        }
+        else if(brazilFlagForms[i].type == 'circle') {
+          canvas.circle(coords.x,coords.y,coords.ray,coords.color)
+        }
+      }
 
-      // Base da bandeira
-      brush.fillStyle = '#009900';
-      brush.fillRect(0,0,width,height);
-
-      // Losâgulo
-      brush.beginPath();
-      brush.fillStyle = '#f7e002';
-      brush.moveTo(width*(1/10),height/2);
-      brush.lineTo(width/2,height*(1/10));
-      brush.lineTo(width*(9/10),height/2);
-      brush.lineTo(width/2,height*(9/10));
-      brush.fill()
-
-
-      brush.beginPath();
-      brush.fillStyle = '#112299';
-      brush.arc(width/2,height/2,width/6,0,2*pi);
-      brush.fill();
+      // seria interessante se todos os métodos criados em DrawCanvas fossem baseados em settings, como é o método polygon
     </script>
   </body>
 </html>
