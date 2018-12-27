@@ -1,0 +1,27 @@
+.portifolio h2 {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+.referencias li{
+    display: inline-block;
+    width: 40%;
+    border: 5px solid #000;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    background-color: #faffff;
+
+}
+.referencias li a:visited{
+    color: #851944;
+}
+
+figure img{
+    width: 100%;
+}
+
+figcaption{
+    color: #851944;
+}

@@ -1,0 +1,13 @@
+article{
+    padding: 30px 0;
+    border-bottom: 1px solid #c2ccca;
+}
+.read-more{
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #c2ccca;
+}
