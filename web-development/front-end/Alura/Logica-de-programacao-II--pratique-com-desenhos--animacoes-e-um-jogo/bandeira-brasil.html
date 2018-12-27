@@ -19,7 +19,6 @@
 
       for (var i=0, len=brazilFlagForms.length;i<len;i++) {
         var coords = brazilFlagForms[i].coords
-        console.log(coords);
         if(brazilFlagForms[i].type == 'rect') {
           canvas.rect(coords.initialX,coords.initialY,coords.width,coords.height,coords.color)
         }
