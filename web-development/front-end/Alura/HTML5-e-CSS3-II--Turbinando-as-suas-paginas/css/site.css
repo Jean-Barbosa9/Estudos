@@ -1,105 +1,134 @@
-body{
+body {
     font-family: "Crimson Text", "Times New Roman", serif;
     background-color: #F2FFFC;
-    margin: 0;
-    line-height: 2;
+    font-size: 120%;
+    line-height: 1.5;
 }
-main{
-    float: left;
-    width: 85%;
-    padding-bottom: 80px;
+
+h1,
+h2,
+.subtitulo-principal {
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
-.main-title{
-    color:#fff;
-    text-align: center;
-    background-color: #851944;
-    padding: 25px;
-    border-bottom: 10px solid #000;
+
+h1 {
+    text-transform: uppercase;
     font-size: 60px;
 }
 
-.wrapper{
-    width: 720px;
-    padding: 30px 0;
-    margin: 0 auto;
+.titulo-principal {
+    text-align: center;
+    background-color: #851944;
+    color: #FFF;
+    padding: 25px;
+    border-bottom: 10px solid #000;
 }
-h1{
-    text-transform: uppercase;
-}
-h1,h2{
-    font-family: "Open Sans Condensed", "Arial", sans-serif;
+
+.subtitulo-texto {
     font-size: 30px;
     clear: both;
 }
 
-p{
+main a {
+    color: #851944;
+}
+
+main p {
     text-align: justify;
     margin: 20px 0;
 }
 
-strong{
-    font-weight: 700;
+.navegacao-site {
+    text-align: center;
+    background-color: #3C1D3D;
+    color: #F2FFFC;
+    padding: 20px;
 }
 
-em{
+.navegacao-site a {
+    color: inherit;
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
+    text-transform: lowercase;
+}
+
+.navegacao-site h1 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.rodape-pagina {
+    background-color: #000;
+    color: #F2FFFC;
+    padding: 20px;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
     font-style: italic;
 }
 
-.foto-perfil{
+.icones-redes-sociais li {
+    display: inline-block;
+}
+
+.icones-redes-sociais a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-indent: -99999px;
+}
+
+.github {
+    background-image: url(../imagens/github.png);
+}
+
+.twitter {
+    background-image: url(../imagens/twitter.png);
+}
+
+.linkedin {
+    background-image: url(../imagens/linkedin.png);
+}
+
+main {
+    width: 80%;
+    float: left;
+    padding-bottom: 80px;
+}
+
+.minha-foto,
+.navegacao-site {
+    border-left: 10px solid black;
+    border-bottom: 10px solid black;
+    box-sizing: border-box;
+}
+
+.navegacao-site {
+    width: 20%;
+    float: right;
+    position: relative;
+    top: 300px;
+}
+
+.minha-foto {
     position: absolute;
     top: 0;
     right: 0;
-}
-.navegacao-site, .foto-perfil{
-    float: right;
-    box-sizing: border-box;
-    border-bottom: 10px solid #000;
-    border-left: 10px solid #000;
-}
-.navegacao-site{
-    position: relative;
-    top: 310px;
-    right: 0;
-    background-color: #3C1D3D;
-    color: #F2FFFC;    
-    font-family: "Open Sans Condensed", sans-serif;
-    padding: 20px;
-    text-align: center;
-    width: 15%;
-}
-.menu h1{
-    margin-bottom: 25px;
-    font-size: 20px;
-}
-.menu a{
-    color: inherit;
-    text-decoration: none;
-    text-transform: lowercase;
-}
-.redes-sociais li{
-    display: inline-block;
-}
-.redes-sociais a{
-    display: block;
-    font-size: 0;
-    width: 40px;
-    height: 40px;
-}
-.github{
-    background-image: url('../img/github.png');
-}
-.twitter{
-    background-image: url('../img/twitter.png');
-}
-.linkedin{
-    background-image: url('../img/linkedin.png');
-}
-.page-footer{
-    position: fixed;
-    bottom: 0;
-    background-color: #000;
-    color: #F2FFFC;    
-    padding: 20px;
-    clear: both;
-    width: 100%;
+    height: 300px;
 }
