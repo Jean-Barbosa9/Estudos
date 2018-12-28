@@ -1,45 +1,60 @@
 .foto-home {
-  height: 200px;
+  height: 12.5rem;
 }
+
+.subtitulo-principal {
+  font-size: 1rem;
+}
+
 .saudacao p {
+  padding: 4.5rem 3rem;
   color: #99A;
   line-height: 1;
 }
 .saudacao-inicio {
+  font-size: 3rem;
   color: #889;
 }
 .saudacao-ultima-linha {
-  text-align: right;
   display: block;
+  text-align: right;
 }
 .saudacao strong {
+  font-size: 2rem;
   color: #000;
 }
 .saudacao em {
+  font-size: 4rem;
   color: #851944;
 }
 .botao-index {
-  background-color: #851944;
-  color: #FFF;
-  border: .2em solid black;
-  width: 400px;
   display: block;
+  width: 25rem;
+  margin: 0 auto 1.4rem auto;
+  padding: .75rem;
+  color: #FFF;
   text-align: center;
+  background-color: #851944;
+  border: .2em solid black;
 }
 .secao-inicio h2 {
   text-transform: uppercase;
 }
 .trabalhos {
+  margin-top: 1.5rem;
+  padding: 1.9rem 1.25rem;
   background-color: #3C1D3D;
-  border-top: 10px solid #000;
-  border-bottom: 10px solid #000;
+  border-top: .625rem solid #000;
+  border-bottom: .625rem solid #000;
 }
 .trabalhos h2 {
+  font-size: 2rem;
   color: #FFF;
 }
 .trabalhos ul {
+  margin: 1.56rem 0;
   overflow: hidden;
-  border: 10px solid black;
+  border: .625rem solid black;
 }
 .trabalhos li {
   float: left;
@@ -50,17 +65,43 @@
   display: block;
 }
 .blog {
-  background-color: #999;
+  padding: 1.56rem 1.25rem;
   color: #FFF;
-  border-bottom: 10px solid #851944;
+  background-color: #999;
+  border-bottom: .625rem solid #851944;
 }
+
+.blog h2 {
+  font-size: 2rem;
+}
+
+.blog small {
+  font-size: .75rem;
+}
+
+.blog ol {
+  margin-top: 1.25rem;
+  margin-bottom: 1.9rem;
+}
+
 .blog li a {
   color: #FCF;
+  line-height: 2.6rem;
 }
 footer {
+  padding: 1.9rem 1.25rem;
   background-color: #000;
   color: #FFF;
 }
+
+footer h2 {
+  font-size: 2rem;
+}
+
+footer p {
+  font-size: .75rem;
+}
+
 footer a {
   color: #F99;
 }
