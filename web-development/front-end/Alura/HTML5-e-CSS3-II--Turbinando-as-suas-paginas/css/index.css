@@ -1,5 +1,5 @@
 .foto-home {
-  height: 12.5rem;
+  height: 200px;
 }
 
 .subtitulo-principal {
@@ -7,12 +7,13 @@
 }
 
 .saudacao p {
-  padding: 4.5rem 3rem;
+  padding: 2em;
+  font-size: 1.5em;
   color: #99A;
   line-height: 1;
 }
 .saudacao-inicio {
-  font-size: 3rem;
+  font-size: 3em;
   color: #889;
 }
 .saudacao-ultima-linha {
@@ -20,41 +21,46 @@
   text-align: right;
 }
 .saudacao strong {
-  font-size: 2rem;
+  font-size: 2em;
   color: #000;
 }
 .saudacao em {
-  font-size: 4rem;
+  font-size: 4em;
   color: #851944;
 }
 .botao-index {
   display: block;
-  width: 25rem;
-  margin: 0 auto 1.4rem auto;
-  padding: .75rem;
+  width: 40ch;
+  margin: 2em auto;
+  padding: .5em;
+  font-size: 1.25em;
   color: #FFF;
   text-align: center;
   background-color: #851944;
   border: .2em solid black;
 }
+
+.secao-inicio {
+  padding: 2em;
+}
+
 .secao-inicio h2 {
+  margin-bottom: .5em;
+  font-size: 3em;
   text-transform: uppercase;
+  text-shadow: 2px 2px #000;
 }
 .trabalhos {
-  margin-top: 1.5rem;
-  padding: 1.9rem 1.25rem;
   background-color: #3C1D3D;
-  border-top: .625rem solid #000;
-  border-bottom: .625rem solid #000;
+  border-top: .5em solid #000;
+  border-bottom: .5em solid #000;
 }
 .trabalhos h2 {
-  font-size: 2rem;
   color: #FFF;
 }
 .trabalhos ul {
-  margin: 1.56rem 0;
+  border: .5em solid black;
   overflow: hidden;
-  border: .625rem solid black;
 }
 .trabalhos li {
   float: left;
@@ -65,37 +71,29 @@
   display: block;
 }
 .blog {
-  padding: 1.56rem 1.25rem;
   color: #FFF;
   background-color: #999;
-  border-bottom: .625rem solid #851944;
-}
-
-.blog h2 {
-  font-size: 2rem;
+  border-bottom: .5em solid #851944;
 }
 
 .blog small {
-  font-size: .75rem;
-}
-
-.blog ol {
-  margin-top: 1.25rem;
-  margin-bottom: 1.9rem;
+  position: relative;
+  top: -2em;
 }
 
 .blog li a {
+  padding: .5em;
   color: #FCF;
   line-height: 2.6rem;
 }
 footer {
-  padding: 1.9rem 1.25rem;
+  padding: 2em;
   background-color: #000;
   color: #FFF;
 }
 
 footer h2 {
-  font-size: 2rem;
+  font-size: 2em;
 }
 
 footer p {
