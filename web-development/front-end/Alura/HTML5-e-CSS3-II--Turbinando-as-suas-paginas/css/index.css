@@ -15,6 +15,7 @@
   font-family: 'Shadows Into Light',cursive;
   color: #D5447E;
   font-size: .3em;
+  font-weight: bold;
 }
 
 .eficiencia {
@@ -87,7 +88,7 @@
 .botao-index {
   display: block;
   width: 40ch;
-  margin: 2em auto;
+  margin: 3em auto;
   padding: .5em;
   font-size: 1.25em;
   color: #FFF;
@@ -127,7 +128,6 @@
   display: block;
 }
 .blog {
-  position: relative;
   color: #FFF;
   background-color: #999;
   border-bottom: .5em solid #851944;
@@ -138,10 +138,24 @@
   top: -2em;
 }
 
+.blog li {
+  position: relative;
+  transition: background .3s ease-in;
+}
+
+.blog li:hover {
+  background: #ffffff;
+}
+
 .blog li a {
   padding: .5em;
   color: #FCF;
   line-height: 2.6rem;
+  transition: color .3s ease-in;
+}
+
+.blog li a:hover {
+  color: #ff0000;
 }
 
 .blog li a:hover + .inicio-post {
@@ -150,8 +164,8 @@
 
 .blog .inicio-post {
   position: absolute;
-  top: 3em;
-  right: 3em;
+  top: -4em;
+  right: 0;
   width: 100ch;
   height: 6em;
   padding: 1em;
@@ -159,10 +173,6 @@
   background: #ffffff;
   opacity: 0;
   transition: opacity .3s ease-in;
-}
-
-.blog .inicio-post.first{
-  opacity: 1;
 }
 
 footer {
