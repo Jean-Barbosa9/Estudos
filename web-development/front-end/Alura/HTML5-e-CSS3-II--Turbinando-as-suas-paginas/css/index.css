@@ -71,6 +71,7 @@
   display: block;
 }
 .blog {
+  position: relative;
   color: #FFF;
   background-color: #999;
   border-bottom: .5em solid #851944;
@@ -86,6 +87,28 @@
   color: #FCF;
   line-height: 2.6rem;
 }
+
+.blog li a:hover + .inicio-post {
+  opacity: 1;
+}
+
+.blog .inicio-post {
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  width: 100ch;
+  height: 6em;
+  padding: 1em;
+  color: #000000;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity .3s ease-in;
+}
+
+.blog .inicio-post.first{
+  opacity: 1;
+}
+
 footer {
   padding: 2em;
   background-color: #000;
