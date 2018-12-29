@@ -1,9 +1,65 @@
+.titulo-principal {
+  position: relative;
+}
+
 .foto-home {
   height: 200px;
 }
 
 .subtitulo-principal {
   font-size: 1rem;
+}
+
+.palavra-home {
+  position: absolute;
+  font-family: 'Shadows Into Light',cursive;
+  color: #D5447E;
+  font-size: .3em;
+}
+
+.eficiencia {
+  top: 20%;
+  right: 20%;
+}
+.boas-praticas {
+  bottom: 20%;
+  left: 20%;
+}
+.codigo-limpo {
+  top: 40%;
+  left: 10%;
+}
+.css3 {
+  top: 50%;
+  left: 30%;
+}
+.html5 {
+  top: 40%;
+  right: 18%;
+}
+.javascript {
+  top: 10%;
+  right: 35%;
+}
+.acessibilidade {
+  top: 30%;
+  left: 28%;
+}
+.responsivo {
+  top: 15%;
+  left: 13%;
+}
+.otimizacoes {
+  bottom: 30%;
+  right: 24%;
+}
+.agilidade {
+  top: 10%;
+  left: 35%;
+}
+.design {
+  top: 35%;
+  right: 30%;
 }
 
 .saudacao p {
