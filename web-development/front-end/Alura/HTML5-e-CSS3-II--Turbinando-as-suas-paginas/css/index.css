@@ -22,46 +22,57 @@
 .eficiencia {
   top: 20%;
   right: 20%;
+  transform: rotate(-10deg)
 }
 .boas-praticas {
   bottom: 20%;
   left: 20%;
+  transform: rotate(10deg)
 }
 .codigo-limpo {
   top: 40%;
   left: 10%;
+  transform: rotate(-15deg)
 }
 .css3 {
   top: 50%;
   left: 30%;
+  transform: rotate(5deg)
 }
 .html5 {
   top: 40%;
   right: 18%;
+  transform: rotate(7deg)
 }
 .javascript {
   top: 10%;
   right: 35%;
+  transform: rotate(-7deg)
 }
 .acessibilidade {
   top: 30%;
   left: 28%;
+  transform: rotate(-10deg)
 }
 .responsivo {
   top: 15%;
   left: 13%;
+  transform: rotate(10deg)
 }
 .otimizacoes {
   bottom: 30%;
   right: 24%;
+  transform: rotate(-10deg)
 }
 .agilidade {
   top: 10%;
   left: 35%;
+  transform: rotate(10deg)
 }
 .design {
   top: 35%;
   right: 30%;
+  transform: rotate(10deg)
 }
 
 .saudacao p {
