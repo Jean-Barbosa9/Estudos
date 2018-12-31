@@ -1,5 +1,6 @@
 .titulo-principal {
   position: relative;
+  overflow: hidden;
 }
 
 .foto-home {
@@ -73,6 +74,25 @@
   top: 35%;
   right: 30%;
   transform: rotate(10deg)
+}
+
+.banner-twitter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14em;
+  padding: 1em 0;
+  font-family: 'Open Sans Condensed',sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  background: #3C1D3D;
+  border: .25rem solid #000000;
+  box-sizing: border-box;
+  transform: translate(6.5765em,-2.4745em) rotate(45deg);
+  transform-origin: 0 0;
 }
 
 .saudacao p {
