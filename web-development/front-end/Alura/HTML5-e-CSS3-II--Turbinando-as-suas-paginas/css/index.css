@@ -1,6 +1,19 @@
+html,body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  perspective: 6px;
+  perspective-origin: 50% 160px;
+}
+
 .titulo-principal {
   position: relative;
-  overflow: hidden;
+}
+
+.titulo-principal, .palavras-home {
+  transform-style: preserve-3d;
 }
 
 .foto-home {
@@ -19,7 +32,6 @@
   bottom: 0;
   left: 0;
   font-size: 1rem;
-  perspective: 16px;
 }
 
 .palavras-home li {
@@ -35,18 +47,18 @@
 }
 
 .eficiencia {
-  top: 20%;
-  left: 70%;
-  transform: translate(-50%,-50%) rotate(-10deg) translateZ(4px) scale(0.25);
+  top: 30%;
+  left: 65%;
+  transform: translate(-50%,-50%) rotate(-10deg) translateZ(1px) scale(0.25);
 }
 .boas-praticas {
   top: 80%;
-  left: 20%;
+  left: 30%;
   transform: translate(-50%,-50%) translate(-50%,-50%) rotate(10deg) translateZ(1px) scale(0.25);
 }
 .codigo-limpo {
   top: 40%;
-  left: 10%;
+  left: 25%;
   transform: translate(-50%,-50%) rotate(-15deg) translateZ(2px) scale(0.25);
 }
 .css3 {
@@ -55,14 +67,14 @@
   transform: translate(-50%,-50%) rotate(5deg) translateZ(2px) scale(0.25);
 }
 .html5 {
-  top: 40%;
-  left: 72%;
+  top: 50%;
+  left: 65%;
   transform: translate(-50%,-50%) rotate(7deg) translateZ(3px) scale(0.25);
 }
 .javascript {
-  top: 10%;
+  top: 35%;
   left: 65%;
-  transform: translate(-50%,-50%) rotate(-7deg) translateZ(1px) scale(0.25);
+  transform: translate(-50%,-50%) rotate(-7deg) translateZ(3px) scale(0.25);
 }
 .acessibilidade {
   top: 30%;
@@ -70,9 +82,9 @@
   transform: translate(-50%,-50%) rotate(-10deg) translateZ(3px) scale(0.25);
 }
 .responsivo {
-  top: 15%;
-  left: 13%;
-  transform: translate(-50%,-50%) rotate(10deg) translateZ(3px) scale(0.25);
+  top: 20%;
+  left: 23%;
+  transform: translate(-50%,-50%) rotate(10deg) translateZ(1px) scale(0.25);
 }
 .otimizacoes {
   top: 70%;
@@ -80,14 +92,14 @@
   transform: translate(-50%,-50%) rotate(-10deg) translateZ(2px) scale(0.25);
 }
 .agilidade {
-  top: 10%;
+  top: 20%;
   left: 35%;
   transform: translate(-50%,-50%) rotate(10deg) translateZ(1px) scale(0.25);
 }
 .design {
-  top: 35%;
-  left: 70%;
-  transform: translate(-50%,-50%) rotate(10deg) translateZ(2px) scale(0.25);
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%,-50%) rotate(10deg) translateZ(4px) scale(0.25);
 }
 
 .banner-twitter {
