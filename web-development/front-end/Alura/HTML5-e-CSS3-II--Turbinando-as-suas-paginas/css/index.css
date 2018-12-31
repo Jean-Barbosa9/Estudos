@@ -94,8 +94,10 @@
   color: #000;
 }
 .saudacao em {
+  display: inline-block;
   font-size: 4em;
   color: #851944;
+  transform:  rotate(-5deg) skew(-10deg);
 }
 .botao-index {
   display: block;
