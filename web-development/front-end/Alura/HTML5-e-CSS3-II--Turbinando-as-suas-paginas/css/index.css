@@ -12,6 +12,15 @@
   font-size: 1rem;
 }
 
+.palavras-home {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  perspective: 16px;
+}
+
 .palavra-home {
   position: absolute;
   font-family: 'Shadows Into Light',cursive;
@@ -23,57 +32,57 @@
 .eficiencia {
   top: 20%;
   right: 20%;
-  transform: rotate(-10deg)
+  transform: translate(-50%,-50%) rotate(-10deg) translateZ(4px);
 }
 .boas-praticas {
   bottom: 20%;
   left: 20%;
-  transform: rotate(10deg)
+  transform: translate(-50%,-50%) translate(-50%,-50%) rotate(10deg) translateZ(1px);
 }
 .codigo-limpo {
   top: 40%;
   left: 10%;
-  transform: rotate(-15deg)
+  transform: translate(-50%,-50%) rotate(-15deg) translateZ(2px);
 }
 .css3 {
   top: 50%;
   left: 30%;
-  transform: rotate(5deg)
+  transform: translate(-50%,-50%) rotate(5deg) translateZ(2px);
 }
 .html5 {
   top: 40%;
   right: 18%;
-  transform: rotate(7deg)
+  transform: translate(-50%,-50%) rotate(7deg) translateZ(2px);
 }
 .javascript {
   top: 10%;
   right: 35%;
-  transform: rotate(-7deg)
+  transform: translate(-50%,-50%) rotate(-7deg) translateZ(1px);
 }
 .acessibilidade {
   top: 30%;
   left: 28%;
-  transform: rotate(-10deg)
+  transform: translate(-50%,-50%) rotate(-10deg) translateZ(3px);
 }
 .responsivo {
   top: 15%;
   left: 13%;
-  transform: rotate(10deg)
+  transform: translate(-50%,-50%) rotate(10deg) translateZ(3px);
 }
 .otimizacoes {
   bottom: 30%;
   right: 24%;
-  transform: rotate(-10deg)
+  transform: translate(-50%,-50%) rotate(-10deg) translateZ(2px);
 }
 .agilidade {
   top: 10%;
   left: 35%;
-  transform: rotate(10deg)
+  transform: translate(-50%,-50%) rotate(10deg) translateZ(1px);
 }
 .design {
   top: 35%;
   right: 30%;
-  transform: rotate(10deg)
+  transform: translate(-50%,-50%) rotate(10deg) translateZ(2px);
 }
 
 .banner-twitter {
