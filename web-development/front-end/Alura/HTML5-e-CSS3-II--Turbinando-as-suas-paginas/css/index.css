@@ -42,7 +42,7 @@ body {
 .palavra-home {
   position: absolute;
   font-family: 'Shadows Into Light',cursive;
-  color: #D5447E;
+  color: rgba(255,127,127,.5);
   font-size: .3em;
   font-weight: bold;
 }
