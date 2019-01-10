@@ -64,10 +64,14 @@ main p {
   left: 0;
   width: 100%;
   padding: 1rem;
-  color: #000000;
-  background-color: rgba(0,0,0,.3);
-  clear: both;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #000000;
+  /* background-color: rgba(0,0,0,.3); */
+  background-image: radial-gradient(ellipse at bottom left, rgba(60, 29, 61, 0.8), rgba(60, 29, 61, 0.8) 65%, #000000 65%, #000000 70%, transparent 70%,transparent);
+  background-size: 25%;
+  background-repeat: no-repeat;
   box-sizing: border-box;
+  clear: both;
 }
 
 .container {
