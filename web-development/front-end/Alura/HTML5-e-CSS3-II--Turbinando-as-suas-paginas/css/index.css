@@ -177,6 +177,10 @@ body {
 }
 .trabalhos {
   background-color: #3C1D3D;
+  background-image: linear-gradient(to bottom left, transparent, transparent 45%, rgba(0, 0, 0, 0.1) 50%, transparent 55%, transparent);
+  background-size: 15px 16px;
+  background-position: center;
+  background-attachment: fixed;
   border-top: .5em solid #000;
   border-bottom: .5em solid #000;
 }
@@ -200,6 +204,10 @@ body {
   position: relative;
   color: #FFF;
   background-color: #999;
+  background-image: linear-gradient(to bottom right, transparent, transparent 45%, rgba(255, 255, 255, 0.1) 50%, transparent 55%, transparent);
+  background-size: 15px 16px;
+  background-position: center;
+  background-attachment: fixed;
   border-bottom: .5em solid #851944;
 }
 
