@@ -7,12 +7,12 @@
   background-color: #E6E7E8;
 }
 
-.post-blog {
-  margin-bottom: 1rem;
-  padding-bottom: 1.5rem;
+.post-blog ~ .post-blog{
+  margin-top: 1rem;
+  padding-top: 1.5rem;
   /* border-bottom: .063rem solid #ccc; */
   background-image: linear-gradient(to right, #eee, #aaa, #eee);
   background-size: 90% .063rem;
   background-repeat: no-repeat;
-  background-position: 50% 100%;
+  background-position: 50% 0%;
 }
