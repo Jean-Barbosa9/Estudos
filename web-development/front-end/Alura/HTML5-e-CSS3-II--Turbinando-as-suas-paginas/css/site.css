@@ -98,10 +98,27 @@ em {
 }
 
 .icones-redes-sociais a {
-  width: 2rem;
-  height: 2rem;
+  position: relative;
+  width: 2.3rem;
+  height: 2.3rem;
   display: block;
   text-indent: -99999px;
+}
+
+.icones-redes-sociais a:hover:after,
+.icones-redes-sociais a:focus:after {
+  content: attr(data-title);
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  width: 18ch;
+  padding: 5px;
+  font-size: .75em;
+  color: #ffffff;
+  text-indent: 0;
+  text-shadow: 0 0 3px pink;
+  background: #000000;
+  transform: translateX(-50%);
 }
 
 .github {
