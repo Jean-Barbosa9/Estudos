@@ -105,11 +105,24 @@ em {
   text-indent: -99999px;
 }
 
+.icones-redes-sociais a:hover:before,
+.icones-redes-sociais a:focus:before {
+  content: '';
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  transform: rotate(45deg) translateX(-50%);
+}
+
 .icones-redes-sociais a:hover:after,
 .icones-redes-sociais a:focus:after {
   content: attr(data-title);
   position: absolute;
-  top: 110%;
+  top: 130%;
   left: 50%;
   width: 18ch;
   padding: 5px;
@@ -118,6 +131,7 @@ em {
   text-indent: 0;
   text-shadow: 0 0 3px pink;
   background: #000000;
+  border-radius: 5px;
   transform: translateX(-50%);
 }
 
