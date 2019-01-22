@@ -216,9 +216,25 @@ body {
   top: -2em;
 }
 
-.blog .mais-recente {
-  width: 30%;
+.blog li {
+  position: relative;
+}
+
+.blog li:hover,
+.blog li:focus {
   background: #ffffff;
+  outline: none;
+}
+
+.blog li:hover a,
+.blog li:focus a {
+  color: #ff0000;
+}
+
+.blog li:hover .inicio-post,
+.blog li:focus .inicio-post {
+  opacity: 1;
+  outline: none;
 }
 
 .blog li a {
@@ -227,24 +243,20 @@ body {
   line-height: 2.6rem;
 }
 
-.blog .mais-recente a {
-  color: #ff0000;
-}
+
 
 .blog .inicio-post {
-  display: none;
   position: absolute;
-  top: 5em;
-  right: 3em;
+  top: 50%;
+  right: 0;
   width: 100ch;
   height: 8em;
   padding: 1em;
   color: #000000;
   background: #ffffff;
-}
-
-.blog .inicio-post.mais-recente {
-  display: block;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: all .3s ease-in-out;
 }
 
 footer {
