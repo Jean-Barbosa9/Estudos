@@ -58,6 +58,10 @@ main p {
   font-size: 1.5rem;
 }
 
+.navegacao-site a:hover{
+  text-shadow: 0 0 3px pink;
+}
+
 .rodape-pagina {
   position: fixed;
   bottom: 0;
@@ -116,6 +120,13 @@ main {
   width: 80%;
   float: left;
   padding-bottom: 4rem;
+}
+
+main a:hover,
+main a:focus,
+footer a:hover,
+footer a:focus {
+  color: #ff0000;
 }
 
 .minha-foto,
