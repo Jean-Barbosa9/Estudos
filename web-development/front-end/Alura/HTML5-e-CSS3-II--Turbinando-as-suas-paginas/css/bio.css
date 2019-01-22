@@ -1,3 +1,12 @@
+.container > p:first-letter {
+  margin-right: .2ch;
+  font-size: 2em;
+  font-weight: bold;
+  color: #3C1D3D;
+  text-shadow: 1px 1px 0 #3C1D3D;
+  line-height: 1;
+}
+
 .citacao-bio {
   width: 30ch;
   margin: 1rem 2rem;
