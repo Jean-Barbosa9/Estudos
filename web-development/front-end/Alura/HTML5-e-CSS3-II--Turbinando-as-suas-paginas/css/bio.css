@@ -5,6 +5,7 @@
   background-color: #D9E5E3;
   border: .5rem solid #C2CCCA;
   box-sizing: border-box;
+  transition: all .3s ease-in-out;
 }
 
 .citacao-bio:nth-of-type(odd) {
@@ -12,7 +13,19 @@
   float: right;
 }
 
+.citacao-bio:nth-of-type(odd):hover {
+  transform: scale(1.2) rotate(5deg)
+}
+
 .citacao-bio:nth-of-type(even) {
   margin-left: 0;
   float: left;
+}
+.citacao-bio:nth-of-type(even):hover {
+  transform: scale(1.2) rotate(-5deg)
+}
+
+.citacao-bio:nth-of-type(odd):hover,
+.citacao-bio:nth-of-type(even):hover {
+  box-shadow: 0 0 0 9999px rgba(0,0,0,.7);
 }
