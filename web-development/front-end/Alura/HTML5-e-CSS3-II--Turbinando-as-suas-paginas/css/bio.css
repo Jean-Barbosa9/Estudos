@@ -8,6 +8,7 @@
 }
 
 .citacao-bio {
+  position: relative;
   width: 30ch;
   margin: 1rem 2rem;
   padding: 1rem;
@@ -15,6 +16,20 @@
   border: .5rem solid #C2CCCA;
   box-sizing: border-box;
   transition: all .3s ease-in-out;
+}
+
+.citacao-bio > p {
+  position: relative;
+}
+
+.citacao-bio:before {
+  content: '"';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 10em;
+  color: #bbbbbb;
+  line-height: .8;
 }
 
 .citacao-bio:hover,
