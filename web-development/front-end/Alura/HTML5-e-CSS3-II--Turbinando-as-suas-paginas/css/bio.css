@@ -8,6 +8,10 @@
   transition: all .3s ease-in-out;
 }
 
+.citacao-bio:hover {
+  box-shadow: 0 0 0 9999px rgba(0,0,0,.7);
+}
+
 .citacao-bio:nth-of-type(odd) {
   margin-right: 0;
   float: right;
@@ -23,9 +27,4 @@
 }
 .citacao-bio:nth-of-type(even):hover {
   transform: scale(1.2) rotate(-5deg)
-}
-
-.citacao-bio:nth-of-type(odd):hover,
-.citacao-bio:nth-of-type(even):hover {
-  box-shadow: 0 0 0 9999px rgba(0,0,0,.7);
 }
