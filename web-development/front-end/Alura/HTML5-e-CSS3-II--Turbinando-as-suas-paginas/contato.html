@@ -23,18 +23,18 @@
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required="required">
           </fieldset>
           <fieldset>
-            <legent>Assunto</legent>
+            <legent>Assunto: </legent>
             <select id="assunto" name="assunto">
               <option value="selecione">Selecione uma opção</option>
               <option value="blog">Blog</option>
               <option value="servico">Serviço</option>
               <option value="outro">Outro</option>
             </select>
-            <label>Caso tenha selecionado a opção outro:</label>
+            <label for="outro-assunto">Caso tenha selecionado a opção outro:</label>
             <input type="text" name="outro-assunto" placeholder="Especifique aqui">
           </fieldset>
           <fieldset>
-            <legend>Referente a:</legend>
+            <legend>Referente a: </legend>
             <label>
               <input type="radio" name="tipo-contato" value="solicitacao">
               Solicitação
@@ -50,8 +50,10 @@
           </fieldset>
           <label for="msg">Mensagem:</label>
           <textarea name="mensagem" id="msg" cols="60" rows="10" placeholder="Digite aqui a sua mensagem"></textarea>
-          <input type="reset" value="Apagar formulário">
-          <button type="submit">Enviar <strong>para mim</strong></button>
+          <fieldset>
+            <input type="reset" value="Apagar formulário">
+            <button type="submit">Enviar <strong>para mim</strong></button>
+          </fieldset>
         </form>
       </div>
     </main>
