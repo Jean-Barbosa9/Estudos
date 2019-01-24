@@ -1,4 +1,14 @@
+.container > p:first-letter {
+  margin-right: .2ch;
+  font-size: 2em;
+  font-weight: bold;
+  color: #3C1D3D;
+  text-shadow: 1px 1px 0 #3C1D3D;
+  line-height: 1;
+}
+
 .citacao-bio {
+  position: relative;
   width: 30ch;
   margin: 1rem 2rem;
   padding: 1rem;
@@ -6,6 +16,20 @@
   border: .5rem solid #C2CCCA;
   box-sizing: border-box;
   transition: all .3s ease-in-out;
+}
+
+.citacao-bio > p {
+  position: relative;
+}
+
+.citacao-bio:before {
+  content: '"';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 10em;
+  color: #bbbbbb;
+  line-height: .8;
 }
 
 .citacao-bio:hover,
