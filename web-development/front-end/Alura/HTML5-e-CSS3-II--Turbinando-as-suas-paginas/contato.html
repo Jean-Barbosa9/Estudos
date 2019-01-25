@@ -30,8 +30,8 @@
               <option value="servico">Serviço</option>
               <option value="outro">Outro</option>
             </select>
-            <label for="outro-assunto">Caso tenha selecionado a opção <strong>outro</strong>:</label>
-            <input type="text" name="outro-assunto" placeholder="Especifique aqui">
+            <label for="outro-assunto">Especifique aqui o motivo:</label>
+            <input type="text" name="outro-assunto" placeholder="Outro motivo não relacionado">
           </fieldset>
           <fieldset>
             <legend>Referente a: </legend>
@@ -90,5 +90,22 @@
     <footer class="rodape-pagina">
       &copy; João da Silva 2014
     </footer>
+    <script>
+      var select = document.querySelector('#assunto'),
+      labelOutroAssunto = document.querySelector('[for="outro-assunto"]'),
+      inputOutroAssunto = document.querySelector('[name="outro-assunto"]')
+
+      select.addEventListener('change',function(){
+        console.log(this)
+        if(this.value == 'outro') {
+          labelOutroAssunto.style.opacity = 1
+          inputOutroAssunto.style.opacity = 1
+        }
+        else {
+          labelOutroAssunto.style.opacity = 0
+          inputOutroAssunto.style.opacity = 0
+        }
+      })
+    </script>
   </body>
 </html>

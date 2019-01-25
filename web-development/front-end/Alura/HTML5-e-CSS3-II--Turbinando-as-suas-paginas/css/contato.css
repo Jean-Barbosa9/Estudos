@@ -19,6 +19,20 @@ label {
   display: inline-block;
 }
 
+[for=outro-assunto] {
+  margin-left: 1.9em;
+}
+
+[name=outro-assunto] {
+  min-width: 40ch;
+}
+
+[for=outro-assunto],
+[name=outro-assunto] {
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
 select {
   padding: 5px;
   font-family: inherit;
