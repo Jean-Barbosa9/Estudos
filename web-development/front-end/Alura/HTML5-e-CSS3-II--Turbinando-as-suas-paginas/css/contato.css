@@ -19,20 +19,28 @@ label {
   display: inline-block;
 }
 
+select {
+  padding: 5px;
+  font-family: inherit;
+  background: none;
+}
+
 #name,
 #email,
 textarea {
   width: 100%;
+  box-sizing: border-box;
 }
 
-input {
+input,
+textarea {
   padding: 5px;
   font-family: inherit;
   border: 1px solid #ccc;
 }
 
 input:focus {
-  background-color: #f5e597;
+  background-color: #ffd;
   outline: none;
 }
 
@@ -47,13 +55,12 @@ button {
 
 button:hover,
 button:focus {
-  background-color: #864a88;
+  background-color: #8C1D3D;
 }
 
 [type="reset"] {
-  background-color: #851944;
+  background-color: #8C1D3D;
 }
-
 
 [type="reset"]:hover,
 [type="reset"]:focus {
@@ -62,11 +69,18 @@ button:focus {
 
 button,
 [type="reset"] {
-  padding: 5px;
+  padding: .5em;
   font-family: "Open Sans Condensed", "Arial", sans-serif;
   font-size: 1.1em;
   color: #ffffff;
   text-shadow: 1px 1px #000;
   border: none;
   transition: background-color .3s ease-in-out;
+}
+
+button:hover,
+button:focus,
+[type="reset"]:hover,
+[type="reset"]:focus {
+  box-shadow: 0 0 3px #c74277;
 }
