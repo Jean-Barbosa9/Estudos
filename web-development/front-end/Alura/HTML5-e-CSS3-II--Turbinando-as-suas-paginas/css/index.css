@@ -124,7 +124,7 @@ body {
   background: #3C1D3D;
   border: .25rem solid #000000;
   box-sizing: border-box;
-  transform: translate(6.5765em,-2.4745em) rotate(45deg);
+  transform: translate(calc(0.707 * (3.5em - 100%) + 100%),calc(-0.707 * 3.5em)) rotate(45deg);
   transform-origin: 0 0;
 }
 
