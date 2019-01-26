@@ -148,7 +148,7 @@ em {
 }
 
 main {
-  width: 80%;
+  width: calc(100% - 300px * 0.9);
   float: left;
   padding-bottom: 4rem;
 }
@@ -168,7 +168,7 @@ footer a:focus {
 }
 
 .navegacao-site {
-  width: 20%;
+  width: calc(300px * 0.9);
   float: right;
   position: relative;
   top: 300px;
