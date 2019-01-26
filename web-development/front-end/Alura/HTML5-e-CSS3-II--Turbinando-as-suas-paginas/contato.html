@@ -17,9 +17,9 @@
         <form action="">
           <fieldset>
             <legend>Seus dados</legend>
-            <label for="name">Nome:</label>
+            <label for="name" class="com-icone">Nome:</label>
             <input type="text" id="name" name="name" placeholder="Digite seu nome" required="required" pattern="[A-Za-zÃãÕõÁáÉéÍíÓóÚúÂâÊêÔôÇç ']{3,}" title="o nome precisa ter pelo menos 3 letras" autofocus>
-            <label for="email">E-mail:</label>
+            <label for="email" class="com-icone">E-mail:</label>
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required="required">
           </fieldset>
           <fieldset>
@@ -30,8 +30,8 @@
               <option value="servico">Serviço</option>
               <option value="outro">Outro</option>
             </select>
-            <label for="outro-assunto">Especifique aqui o motivo:</label>
-            <input type="text" name="outro-assunto" placeholder="Outro motivo não relacionado">
+            <label for="outro-assunto" class="invisible untouchble">Especifique aqui o motivo:</label>
+            <input type="text" name="outro-assunto" class="invisible untouchble" placeholder="Outro motivo não relacionado">
           </fieldset>
           <fieldset>
             <legend>Referente a: </legend>
@@ -98,12 +98,12 @@
       select.addEventListener('change',function(){
         console.log(this)
         if(this.value == 'outro') {
-          labelOutroAssunto.style.opacity = 1
-          inputOutroAssunto.style.opacity = 1
+          labelOutroAssunto.classList.remove('invisible', 'untouchble')
+          inputOutroAssunto.classList.remove('invisible', 'untouchble')
         }
         else {
-          labelOutroAssunto.style.opacity = 0
-          inputOutroAssunto.style.opacity = 0
+          labelOutroAssunto.classList.add('invisible', 'untouchble')
+          inputOutroAssunto.classList.add('invisible', 'untouchble')
         }
       })
     </script>

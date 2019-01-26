@@ -29,7 +29,6 @@ label {
 
 [for=outro-assunto],
 [name=outro-assunto] {
-  opacity: 0;
   transition: opacity .3s ease-in-out;
 }
 
@@ -39,18 +38,47 @@ select {
   background: none;
 }
 
-#name,
-#email,
+.com-icone {
+  position: relative;
+}
+
+.com-icone + input {
+  position: relative;
+  left: 2rem;
+  width: calc(100% - 2rem);
+}
+
+.com-icone:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: #8c1d3d;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.com-icone[for="name"]:after {
+  background-image: url(../imagens/usuario.png);
+}
+
+.com-icone[for="email"]:after {
+  background-image: url(../imagens/email.png);
+}
+
 textarea {
   width: 100%;
-  box-sizing: border-box;
 }
 
 input,
 textarea {
-  padding: 5px;
+  padding: .4em;
   font-family: inherit;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 input:focus {
@@ -98,3 +126,4 @@ button:focus,
 [type="reset"]:focus {
   box-shadow: 0 0 3px #c74277;
 }
+
