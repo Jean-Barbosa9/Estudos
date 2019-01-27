@@ -80,3 +80,9 @@
   padding: 1em;
   background-color: #eee;
 }
+
+.habilidades .estudando {
+  text-align: center;
+  font-style: italic;
+  vertical-align: middle;
+}
