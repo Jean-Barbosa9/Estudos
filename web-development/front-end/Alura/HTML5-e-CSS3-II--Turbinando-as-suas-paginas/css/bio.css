@@ -55,3 +55,28 @@
 .citacao-bio:nth-of-type(even):focus {
   transform: scale(1.2) rotate(-5deg)
 }
+
+.habilidades {
+  margin: 1em 0;
+  border-collapse: separate;
+  border-spacing: 0.25em;
+}
+
+.habilidades thead tr {
+  background-color: #3C1D3D;
+}
+
+.habilidades tbody th {
+  background-color: #851944;
+}
+
+.habilidades th {
+  padding: 1em;
+  color: #fff;
+  font-weight: bold;
+}
+
+.habilidades td {
+  padding: 1em;
+  background-color: #eee;
+}
