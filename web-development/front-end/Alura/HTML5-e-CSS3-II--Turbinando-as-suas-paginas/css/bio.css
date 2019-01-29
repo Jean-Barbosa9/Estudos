@@ -15,7 +15,7 @@
   background-color: #D9E5E3;
   border: .5rem solid #C2CCCA;
   box-sizing: border-box;
-  transition: box-shadow .4s ease-in-out, transform 0.8s ease-in-out;
+  transition: transform .4s ease-in-out, box-shadow 0.8s ease-in-out;
   transition-delay: 0s, .4s;
 }
 
