@@ -151,8 +151,7 @@ em {
 }
 
 main {
-  width: calc(100% - 300px * 0.9);
-  float: left;
+  flex: 1 0 80%;
   padding-bottom: 4rem;
 }
 
@@ -166,8 +165,6 @@ footer a:focus {
 .minha-foto,
 .navegacao-site {
   border-left: .5rem solid black;
-  border-bottom: .5rem solid black;
-  box-sizing: border-box;
 }
 
 .minha-foto {
@@ -175,6 +172,7 @@ footer a:focus {
   top: 0;
   right: 0;
   height: 300px;
+  border-bottom: .5rem solid black;
 }
 
 .hide {
