@@ -151,6 +151,10 @@ body {
   animation-fill-mode: backwards;
 }
 
+.saudacao:not(:hover) > .saudacao em{
+  animation-play-state: paused;
+}
+
 .saudacao p {
   padding: 2em;
   font-size: 1.5em;
