@@ -22,6 +22,7 @@ body {
 }
 
 body {
+  display: block;
   perspective: 6px;
   perspective-origin: 50% 160px;
 }
