@@ -5,6 +5,16 @@
   }
 }
 
+@keyframes flutuando{
+  0% {
+    top: -5px;
+  }
+
+  100% {
+    top: 5px;
+  }
+}
+
 html,body {
   height: 100%;
   overflow-x: hidden;
@@ -138,6 +148,7 @@ body {
   animation-name: chegando;
   animation-duration: 0.5s;
   animation-delay: 2s;
+  animation-fill-mode: backwards;
 }
 
 .saudacao p {
@@ -159,10 +170,16 @@ body {
   color: #000;
 }
 .saudacao em {
+  position: relative;
   display: inline-block;
   font-size: 4em;
   color: #851944;
   transform:  rotate(-5deg) skew(-10deg);
+  animation-name: flutuando;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 .botao-index {
   display: block;
