@@ -5,7 +5,7 @@
 }
 
 .portfolio li {
-  flex: 0 0 48%;
+  flex: 1 1 48%;
   margin-bottom: 1rem;
   padding: 1rem;
   background-color: #FAFFFC;
@@ -18,7 +18,7 @@
 }
 
 .portfolio li:first-child {
-  flex: 2 0 100%;
+  flex-basis: 100%;
 }
 
 .portfolio img {
