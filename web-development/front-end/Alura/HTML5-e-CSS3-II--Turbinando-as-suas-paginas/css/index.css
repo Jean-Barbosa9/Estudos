@@ -5,7 +5,7 @@
   }
 }
 
-@keyframes flutuando{
+@keyframes flutuando {
   0% {
     top: -5px;
   }
@@ -15,7 +15,8 @@
   }
 }
 
-html,body {
+html,
+body {
   height: 100%;
   overflow-x: hidden;
 }
@@ -29,7 +30,8 @@ body {
   position: relative;
 }
 
-.titulo-principal, .palavras-home {
+.titulo-principal,
+.palavras-home {
   transform-style: preserve-3d;
 }
 
@@ -58,8 +60,8 @@ body {
 
 .palavra-home {
   position: absolute;
-  font-family: 'Shadows Into Light',cursive;
-  color: rgba(255,127,127,.5);
+  font-family: 'Shadows Into Light', cursive;
+  color: rgba(255, 127, 127, .5);
   font-size: .3em;
   font-weight: bold;
   animation: chegando;
@@ -69,63 +71,73 @@ body {
 .eficiencia {
   top: 30%;
   left: 65%;
-  transform: translate(-50%,-50%) rotate(-10deg) translateZ(1px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(-10deg) translateZ(1px) scale(0.25);
   opacity: .5;
 }
+
 .boas-praticas {
   top: 80%;
   left: 30%;
-  transform: translate(-50%,-50%) rotate(10deg) translateZ(1px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(10deg) translateZ(1px) scale(0.25);
   opacity: .5;
 }
+
 .codigo-limpo {
   top: 40%;
   left: 25%;
-  transform: translate(-50%,-50%) rotate(-15deg) translateZ(2px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(-15deg) translateZ(2px) scale(0.25);
   opacity: .8;
 }
+
 .css3 {
   top: 50%;
   left: 30%;
-  transform: translate(-50%,-50%) rotate(5deg) translateZ(2px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(5deg) translateZ(2px) scale(0.25);
   opacity: .8;
 }
+
 .html5 {
   top: 50%;
   left: 65%;
-  transform: translate(-50%,-50%) rotate(7deg) translateZ(3px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(7deg) translateZ(3px) scale(0.25);
 }
+
 .javascript {
   top: 35%;
   left: 65%;
-  transform: translate(-50%,-50%) rotate(-7deg) translateZ(3px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(-7deg) translateZ(3px) scale(0.25);
 }
+
 .acessibilidade {
   top: 30%;
   left: 28%;
-  transform: translate(-50%,-50%) rotate(-10deg) translateZ(3px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(-10deg) translateZ(3px) scale(0.25);
 }
+
 .responsivo {
   top: 20%;
   left: 23%;
-  transform: translate(-50%,-50%) rotate(10deg) translateZ(1px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(10deg) translateZ(1px) scale(0.25);
   opacity: .5;
 }
+
 .otimizacoes {
   top: 70%;
   left: 76%;
-  transform: translate(-50%,-50%) rotate(-10deg) translateZ(2px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(-10deg) translateZ(2px) scale(0.25);
   opacity: .8;
 }
+
 .agilidade {
   top: 20%;
   left: 35%;
-  transform: translate(-50%,-50%) rotate(10deg) translateZ(1px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(10deg) translateZ(1px) scale(0.25);
 }
+
 .design {
   top: 50%;
   left: 55%;
-  transform: translate(-50%,-50%) rotate(10deg) translateZ(4px) scale(0.25);
+  transform: translate(-50%, -50%) rotate(10deg) translateZ(4px) scale(0.25);
 }
 
 .banner-twitter {
@@ -134,7 +146,7 @@ body {
   right: 0;
   width: 14em;
   padding: 1em 0;
-  font-family: 'Open Sans Condensed',sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1rem;
   color: #ffffff;
   text-align: center;
@@ -143,7 +155,7 @@ body {
   background: #3C1D3D;
   border: .25rem solid #000000;
   box-sizing: border-box;
-  transform: translate(calc(0.707 * (3.5em - 100%) + 100%),calc(-0.707 * 3.5em)) rotate(45deg);
+  transform: translate(calc(0.707 * (3.5em - 100%) + 100%), calc(-0.707 * 3.5em)) rotate(45deg);
   transform-origin: 0 0;
   animation-name: chegando;
   animation-duration: 0.5s;
@@ -151,7 +163,7 @@ body {
   animation-fill-mode: backwards;
 }
 
-.saudacao:not(:hover) > .saudacao em{
+.saudacao:not(:hover)>.saudacao em {
   animation-play-state: paused;
 }
 
@@ -161,30 +173,35 @@ body {
   color: #99A;
   line-height: 1;
 }
+
 .saudacao-inicio {
   font-size: 3em;
   color: #889;
 }
+
 .saudacao-ultima-linha {
   display: block;
   text-align: right;
 }
+
 .saudacao strong {
   font-size: 2em;
   color: #000;
 }
+
 .saudacao em {
   position: relative;
   display: inline-block;
   font-size: 4em;
   color: #851944;
-  transform:  rotate(-5deg) skew(-10deg);
+  transform: rotate(-5deg) skew(-10deg);
   animation-name: flutuando;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
 .botao-index {
   display: block;
   width: 40ch;
@@ -218,6 +235,7 @@ body {
   text-transform: uppercase;
   text-shadow: 2px 2px #000;
 }
+
 .trabalhos {
   background-color: #3C1D3D;
   background-image: linear-gradient(to bottom left, transparent, transparent 45%, rgba(0, 0, 0, 0.1) 50%, transparent 55%, transparent);
@@ -227,22 +245,26 @@ body {
   border-top: .5em solid #000;
   border-bottom: .5em solid #000;
 }
+
 .trabalhos h2 {
   color: #FFF;
   text-shadow: 5px 5px #000;
 }
+
 .trabalhos ul {
+  display: flex;
   border: .5em solid black;
-  overflow: hidden;
 }
+
 .trabalhos li {
-  float: left;
-  width: 33.333%;
+  flex: 1;
 }
+
 .trabalhos img {
   width: 100%;
   display: block;
 }
+
 .blog {
   position: relative;
   color: #FFF;
@@ -319,6 +341,7 @@ footer p {
 footer a {
   color: #F99;
 }
+
 main {
   width: 100%;
   padding-bottom: 0;
@@ -338,6 +361,6 @@ main {
   text-align: center;
   font-weight: bold;
   background: #ffffff;
-  box-shadow: 0 0 0 9999px rgba(0,0,0,.5);
-  transform: translate(-50%,-50%);
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, .5);
+  transform: translate(-50%, -50%);
 }
