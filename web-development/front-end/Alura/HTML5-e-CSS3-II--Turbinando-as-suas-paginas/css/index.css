@@ -135,6 +135,9 @@ body {
   box-sizing: border-box;
   transform: translate(calc(0.707 * (3.5em - 100%) + 100%),calc(-0.707 * 3.5em)) rotate(45deg);
   transform-origin: 0 0;
+  animation-name: chegando;
+  animation-duration: 0.5s;
+  animation-delay: 2s;
 }
 
 .saudacao p {
