@@ -254,11 +254,20 @@ body {
 
 .trabalhos ul {
   display: flex;
-  border: .5em solid black;
 }
 
 .trabalhos li {
   flex: 1;
+  border: .5em solid black;
+}
+
+.trabalhos li:first-child {
+  order: 1;
+  transform: scale(1.2);
+}
+
+.trabalhos li:last-child {
+  order: 1;
 }
 
 .trabalhos img {
