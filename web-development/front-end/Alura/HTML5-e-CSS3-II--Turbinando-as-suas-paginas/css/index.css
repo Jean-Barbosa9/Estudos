@@ -160,9 +160,19 @@ body {
   font-size: 1.25em;
   color: #FFF;
   text-align: center;
+  text-decoration: none;
   background-color: #851944;
   border: .2em solid 000000;
   box-shadow: 0 0 .5em #000000, inset 0 0 .5em #ffffff;
+  transition: background .5s ease-in-out, box-shadow .5s ease-in-out;
+
+}
+
+.botao-index:hover,
+.botao-index:focus {
+  color: #ffffff;
+  background: #C54974;
+  box-shadow: 0 0 5px #fa9fa9;
 }
 
 .secao-inicio {
